@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chun Xue Factory Showcase</title>
+  <style>
+    :root {
+      --bg: #f4efe7;
+      --surface: rgba(255, 255, 255, 0.82);
+      --text: #13211d;
+      --muted: #5c6b65;
+      --brand: #1d5c4f;
+      --brand-2: #0f7c68;
+      --shadow: 0 24px 80px rgba(25, 40, 35, 0.12);
+      --radius-xl: 30px;
+      --radius-lg: 22px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(29, 92, 79, 0.18), transparent 34%),
+        radial-gradient(circle at top right, rgba(194, 139, 70, 0.16), transparent 28%),
+        linear-gradient(180deg, #f8f4ec 0%, #f2eee8 46%, #ede7df 100%);
+      font-family: "Segoe UI", "Aptos", "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(19, 33, 29, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(19, 33, 29, 0.02) 1px, transparent 1px);
+      background-size: 34px 34px;
+      mask-image: linear-gradient(180deg, rgba(0,0,0,0.6), transparent 85%);
+      opacity: 0.5;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    .page { position: relative; z-index: 1; }
+    .container { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(18px);
+      background: rgba(244, 239, 231, 0.72);
+      border-bottom: 1px solid rgba(19, 33, 29, 0.08);
+    }
+
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 16px 0;
+    }
+
+    .brand-mark {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+
+    .brand-badge {
+      width: 40px;
+      height: 40px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, rgba(29, 92, 79, 0.96), rgba(15, 124, 104, 0.9));
+      box-shadow: 0 12px 24px rgba(29, 92, 79, 0.24);
+      position: relative;
+    }
+
+    .brand-badge::before,
+    .brand-badge::after {
+      content: "";
+      position: absolute;
+      inset: 10px 9px 12px 9px;
+      border: 2px solid rgba(255, 255, 255, 0.9);
+      border-top-width: 6px;
+      border-radius: 8px 8px 6px 6px;
+    }
+
+    .top-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .top-links a {
+      font-size: 0.93rem;
+      color: var(--muted);
+      padding: 10px 14px;
+      border-radius: 999px;
+      transition: 0.2s ease;
+    }
+
+    .top-links a:hover {
+      background: rgba(29, 92, 79, 0.08);
+      color: var(--brand);
+    }
+
+    .lang-switch {
+      display: inline-flex;
+      gap: 8px;
+      padding: 4px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid rgba(19, 33, 29, 0.06);
+    }
+
+    .lang-btn {
+      appearance: none;
+      border: 0;
+      background: transparent;
+      color: var(--muted);
+      font: inherit;
+      font-weight: 700;
+      padding: 8px 12px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .lang-btn.is-active {
+      background: linear-gradient(135deg, var(--brand), var(--brand-2));
+      color: #fff;
+    }
+
+    .hero { padding: 42px 0 26px; }
+    .hero-grid { display: grid; grid-template-columns: 1fr; gap: 22px; align-items: stretch; }
+    .hero-card, .panel, .metric, .info-card, .contact-card {
+      background: var(--surface);
+      border: 1px solid rgba(255, 255, 255, 0.75);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(16px);
+    }
+
+    .hero-card {
+      border-radius: var(--radius-xl);
+      padding: 30px 34px 22px;
+      position: relative;
+      overflow: hidden;
+      min-height: auto;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: auto -12% -32% auto;
+      width: 360px;
+      height: 360px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 35%, rgba(29, 92, 79, 0.18), rgba(29, 92, 79, 0.03) 65%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(29, 92, 79, 0.08);
+      color: var(--brand);
+      font-size: 0.92rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      margin-bottom: 18px;
+    }
+
+    .title {
+      margin: 0;
+      font-size: clamp(1.95rem, 3.2vw, 3.6rem);
+      line-height: 1;
+      letter-spacing: -0.04em;
+      white-space: nowrap;
+      max-width: 100%;
+    }
+
+    .title .accent {
+      display: inline;
+      color: var(--brand);
+      margin-top: 0;
+    }
+
+    .subtitle {
+      max-width: 62ch;
+      margin: 18px 0 0;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 13px 18px;
+      border-radius: 14px;
+      font-weight: 700;
+      border: 1px solid transparent;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+
+    .btn:hover { transform: translateY(-1px); }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--brand), var(--brand-2));
+      color: #fff;
+      box-shadow: 0 16px 28px rgba(29, 92, 79, 0.24);
+    }
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.74);
+      border-color: rgba(19, 33, 29, 0.08);
+      color: var(--text);
+    }
+
+    .section { padding: 22px 0 8px; }
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 18px;
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      margin: 0;
+      font-size: 1.45rem;
+      letter-spacing: -0.03em;
+    }
+
+    .section-note {
+      margin: 0;
+      color: var(--muted);
+      max-width: 56ch;
+      font-size: 0.96rem;
+    }
+
+    .grid-4 { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+    .metric {
+      border-radius: 22px;
+      padding: 22px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .metric::after {
+      content: "";
+      position: absolute;
+      right: -12px;
+      top: -12px;
+      width: 92px;
+      height: 92px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(29, 92, 79, 0.14), transparent 68%);
+    }
+
+    .metric .num {
+      display: block;
+      font-size: clamp(1.8rem, 3vw, 2.35rem);
+      font-weight: 800;
+      letter-spacing: -0.05em;
+      color: var(--brand);
+    }
+
+    .metric .desc {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .panel {
+      border-radius: var(--radius-xl);
+      padding: 26px;
+    }
+
+    .split { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 16px; }
+    .info-card {
+      border-radius: 22px;
+      padding: 22px;
+      height: 100%;
+    }
+
+    .info-card h3 {
+      margin: 0 0 12px;
+      font-size: 1.02rem;
+      letter-spacing: -0.02em;
+    }
+
+    .info-list { display: grid; gap: 12px; margin: 0; }
+    .info-row {
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      gap: 12px;
+      align-items: start;
+      padding: 12px 0;
+      border-top: 1px solid rgba(19, 33, 29, 0.08);
+    }
+
+    .info-row:first-child { border-top: 0; padding-top: 0; }
+    .info-label { color: var(--muted); font-size: 0.92rem; }
+    .info-value { font-weight: 600; color: var(--text); }
+
+    .chips { display: flex; flex-wrap: wrap; gap: 10px; }
+    .chip {
+      padding: 10px 14px;
+      background: rgba(29, 92, 79, 0.08);
+      color: var(--brand);
+      border-radius: 999px;
+      font-size: 0.92rem;
+      font-weight: 600;
+    }
+
+    .brand-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .brand-item {
+      padding: 14px;
+      border-radius: 16px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(247, 243, 237, 0.96));
+      border: 1px solid rgba(19, 33, 29, 0.06);
+      text-align: center;
+      font-weight: 700;
+      color: #21312b;
+    }
+
+    .bars { display: grid; gap: 14px; margin-top: 12px; }
+    .bar-row {
+      display: grid;
+      grid-template-columns: 112px 1fr 56px;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .bar-label { color: var(--text); font-weight: 600; font-size: 0.94rem; }
+    .bar-track {
+      height: 14px;
+      border-radius: 999px;
+      background: rgba(19, 33, 29, 0.08);
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--brand), var(--brand-2));
+    }
+
+    .bar-value { text-align: right; font-weight: 700; color: var(--brand); }
+
+    .timeline { display: grid; gap: 12px; margin-top: 6px; }
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 14px;
+      align-items: start;
+      padding: 14px 0;
+      border-top: 1px solid rgba(19, 33, 29, 0.08);
+    }
+
+    .timeline-item:first-child { border-top: 0; padding-top: 0; }
+    .timeline-title { font-weight: 800; color: var(--brand); font-size: 0.95rem; }
+    .timeline-desc { color: var(--muted); font-size: 0.95rem; }
+
+    .contact-banner {
+      margin: 22px 0 40px;
+      border-radius: 30px;
+      padding: 28px;
+      background: linear-gradient(135deg, rgba(29, 92, 79, 0.96), rgba(15, 124, 104, 0.92));
+      color: #fff;
+      box-shadow: 0 28px 70px rgba(29, 92, 79, 0.28);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-banner::after {
+      content: "";
+      position: absolute;
+      inset: auto -90px -110px auto;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(231, 212, 179, 0.4), rgba(231, 212, 179, 0.08) 58%, transparent 72%);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 18px;
+      align-items: center;
+    }
+
+    .contact-banner h2 {
+      margin: 0;
+      font-size: clamp(1.6rem, 2.7vw, 2.5rem);
+      letter-spacing: -0.04em;
+    }
+
+    .contact-banner p {
+      margin: 12px 0 0;
+      max-width: 62ch;
+      color: rgba(255, 255, 255, 0.82);
+    }
+
+    .contact-card {
+      margin-top: 18px;
+      border-radius: 22px;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.92);
+      color: var(--text);
+    }
+
+    .contact-points {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .contact-point {
+      padding: 16px;
+      border-radius: 16px;
+      background: rgba(29, 92, 79, 0.06);
+      border: 1px solid rgba(29, 92, 79, 0.08);
+    }
+
+    .contact-point .k {
+      display: block;
+      color: var(--muted);
+      font-size: 0.86rem;
+      margin-bottom: 6px;
+    }
+
+    .contact-point .v {
+      font-weight: 700;
+      line-height: 1.35;
+    }
+
+    .footer { padding: 0 0 36px; color: var(--muted); font-size: 0.92rem; }
+
+    .reveal { animation: rise 0.8s ease both; }
+    .delay-1 { animation-delay: 0.08s; }
+    .delay-2 { animation-delay: 0.16s; }
+    .delay-3 { animation-delay: 0.24s; }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 1040px) {
+      .hero-grid, .split, .contact-grid { grid-template-columns: 1fr; }
+      .grid-4, .brand-grid, .contact-points { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .hero-card { min-height: auto; }
+    }
+
+    @media (max-width: 720px) {
+      .container { width: min(var(--max), calc(100% - 28px)); }
+      .topbar-inner { flex-direction: column; align-items: start; }
+      .hero { padding-top: 24px; }
+      .hero-card, .panel, .contact-banner { padding: 22px; border-radius: 24px; }
+      .grid-4, .brand-grid, .contact-points { grid-template-columns: 1fr; }
+      .section-header { align-items: start; flex-direction: column; }
+      .info-row, .bar-row, .timeline-item { grid-template-columns: 1fr; }
+      .bar-value { text-align: left; }
+      .title { white-space: normal; font-size: clamp(1.55rem, 7vw, 2.45rem); }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <div class="container topbar-inner">
+        <div class="brand-mark">
+          <span class="brand-badge" aria-hidden="true"></span>
+          <div>
+            <div>Chun Xue</div>
+            <div style="font-size: 0.85rem; color: var(--muted); font-weight: 500;">Cambodia Cashmere Textile</div>
+          </div>
+        </div>
+        <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap;">
+          <nav class="top-links" aria-label="Page navigation">
+            <a href="#about" data-i18n="nav.about">Factory Overview</a>
+            <a href="#capabilities" data-i18n="nav.capabilities">Core Capabilities</a>
+            <a href="#compliance" data-i18n="nav.compliance">Compliance</a>
+            <a href="#customers" data-i18n="nav.customers">Customers & Market</a>
+            <a href="#contact" data-i18n="nav.contact">Contact</a>
+          </nav>
+          <div class="lang-switch" role="group" aria-label="Language switch">
+            <button class="lang-btn is-active" type="button" data-lang="en">EN</button>
+            <button class="lang-btn" type="button" data-lang="zh">中文</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-grid">
+          <article class="hero-card reveal">
+            <h1 class="title">
+              Chun Xue <span class="accent">(Cambodia) Cashmere Textile Co., Ltd.</span>
+            </h1>
+          </article>
+
+        </div>
+      </section>
+
+      <section class="section" id="about">
+        <div class="container">
+          <div class="section-header">
+            <div>
+              <h2 class="section-title" data-i18n="about.title">Factory Overview</h2>
+            </div>
+          </div>
+          <div class="grid-4">
+            <div class="metric reveal">
+              <span class="num">2015</span>
+              <div class="desc" data-i18n="about.m1">Factory established</div>
+            </div>
+            <div class="metric reveal delay-1">
+              <span class="num">35,000㎡</span>
+              <div class="desc" data-i18n="about.m2">Plant area</div>
+            </div>
+            <div class="metric reveal delay-2">
+              <span class="num">18,000㎡</span>
+              <div class="desc" data-i18n="about.m3">Production area</div>
+            </div>
+            <div class="metric reveal delay-3">
+              <span class="num">416</span>
+              <div class="desc" data-i18n="about.m4">Knitting Machine</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="capabilities">
+        <div class="container">
+          <div class="panel">
+            <div class="section-header">
+            <div>
+              <h2 class="section-title" data-i18n="cap.title">Core Capabilities</h2>
+              </div>
+            </div>
+
+            <div class="split">
+              <div class="info-card">
+                <h3 data-i18n="cap.info_title">Factory Information</h3>
+                <div class="info-list">
+                  <div class="info-row">
+                    <div class="info-label" data-i18n="cap.product_label">Main product</div>
+                    <div class="info-value">SWEATER - Ladies, Men's, Kid's</div>
+                  </div>
+                  <div class="info-row">
+                    <div class="info-label" data-i18n="cap.process_label">Production process</div>
+                    <div class="info-value" data-i18n="cap.process_value">Knitting / Linking / Washing / Sewing / Finishing / Packing</div>
+                  </div>
+                  <div class="info-row">
+                    <div class="info-label" data-i18n="cap.business_label">Business term</div>
+                    <div class="info-value" data-i18n="cap.business_value">CMT, FOB, DDP</div>
+                  </div>
+                  <div class="info-row">
+                    <div class="info-label" data-i18n="cap.output_label">Annual output</div>
+                    <div class="info-value">4,000,000 pcs</div>
+                  </div>
+                  <div class="info-row">
+                    <div class="info-label" data-i18n="cap.sample_label">Sample</div>
+                    <div class="info-value" data-i18n="cap.sample_value">OEM, ODM development</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="info-card">
+                <h3 data-i18n="cap.product_title">Products & Technology</h3>
+                <div class="chips">
+                  <span class="chip">Cashmere</span>
+                  <span class="chip">Cashmere blended</span>
+                  <span class="chip">Merino wool</span>
+                  <span class="chip">Cotton</span>
+                  <span class="chip">Linen</span>
+                  <span class="chip">Viscose</span>
+                  <span class="chip">3/5/7/12/14GG</span>
+                </div>
+                <div style="height: 18px;"></div>
+                <h3 data-i18n="cap.green_title">Green Measures</h3>
+                <div class="timeline">
+                  <div class="timeline-item">
+                    <div class="timeline-title">300kW</div>
+                    <div class="timeline-desc" data-i18n="cap.green_1">Solar panels installed capacity, covering about 50% of factory power consumption.</div>
+                  </div>
+                  <div class="timeline-item">
+                    <div class="timeline-title">7,000㎡</div>
+                    <div class="timeline-desc" data-i18n="cap.green_2">Insulation film area, reducing around 80% of heat absorption.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="compliance">
+        <div class="container">
+          <div class="panel">
+            <div class="section-header">
+              <div>
+                <h2 class="section-title" data-i18n="comp.title">Compliance</h2>
+              </div>
+            </div>
+
+            <div class="split">
+              <div class="info-card">
+                <h3 data-i18n="comp.audit_title">Human Rights & Factory Audits</h3>
+                <div class="chips">
+                  <span class="chip">ILO-Better Work</span>
+                  <span class="chip">WRAP</span>
+                  <span class="chip">BSCI</span>
+                  <span class="chip">ICS</span>
+                  <span class="chip">SMETA</span>
+                  <span class="chip">GSV</span>
+                  <span class="chip">Costco GMP</span>
+                </div>
+              </div>
+
+              <div class="info-card">
+                <h3 data-i18n="comp.sustain_title">Sustainability Standards</h3>
+                <div class="chips">
+                  <span class="chip">HIGG VFEM</span>
+                  <span class="chip">ZDHC</span>
+                  <span class="chip">GRS</span>
+                  <span class="chip">RCS</span>
+                  <span class="chip">RWS</span>
+                  <span class="chip">OCS</span>
+                  <span class="chip">RAS</span>
+                  <span class="chip">NATIVA</span>
+                  <span class="chip">OEKO-TEX</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="customers">
+        <div class="container">
+          <div class="panel">
+            <div class="section-header">
+              <div>
+                <h2 class="section-title" data-i18n="cust.title">Customers & Market</h2>
+              </div>
+            </div>
+
+            <div class="split">
+              <div class="info-card">
+                <h3>Main Customers</h3>
+                <div class="brand-grid">
+                  <div class="brand-item">A&amp;F</div>
+                  <div class="brand-item">Ann Taylor</div>
+                  <div class="brand-item">Armani Exchange</div>
+                  <div class="brand-item">Bombas</div>
+                  <div class="brand-item">Calvin Klein</div>
+                  <div class="brand-item">Costco</div>
+                  <div class="brand-item">Fat Face</div>
+                  <div class="brand-item">Free People</div>
+                  <div class="brand-item">Levis</div>
+                  <div class="brand-item">Loft</div>
+                  <div class="brand-item">Maison 123</div>
+                  <div class="brand-item">Monoprix</div>
+                  <div class="brand-item">Reitmans</div>
+                  <div class="brand-item">Sandro</div>
+                  <div class="brand-item">Tommy Hilfiger</div>
+                  <div class="brand-item">Vuori</div>
+                </div>
+              </div>
+
+              <div class="info-card">
+                <h3 data-i18n="cust.market_title">Market Allocation</h3>
+                <div class="bars">
+                  <div class="bar-row">
+                    <div class="bar-label">North America</div>
+                    <div class="bar-track"><div class="bar-fill" style="width: 50%;"></div></div>
+                    <div class="bar-value">50%</div>
+                  </div>
+                  <div class="bar-row">
+                    <div class="bar-label">Europe</div>
+                    <div class="bar-track"><div class="bar-fill" style="width: 45%;"></div></div>
+                    <div class="bar-value">45%</div>
+                  </div>
+                  <div class="bar-row">
+                    <div class="bar-label">Other Markets</div>
+                    <div class="bar-track"><div class="bar-fill" style="width: 5%;"></div></div>
+                    <div class="bar-value">5%</div>
+                  </div>
+                </div>
+                <div style="height: 18px;"></div>
+                <div class="chips">
+                  <span class="chip">Canada, USA</span>
+                  <span class="chip">UK, Germany, France</span>
+                  <span class="chip">Asia, Middle East</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="contact">
+        <div class="container">
+          <div class="contact-banner">
+            <div class="contact-grid">
+              <div>
+                <h2 data-i18n="contact.title">Contact the Factory</h2>
+              </div>
+              <div>
+                <a class="btn btn-secondary" href="mailto:weisiyu@chunxuecambodia.com" style="background: rgba(255,255,255,0.18); color:#fff; border-color: rgba(255,255,255,0.28);" data-i18n="contact.cta">Contact Now</a>
+              </div>
+            </div>
+
+            <div class="contact-card">
+              <div class="contact-points">
+                <div class="contact-point">
+                  <span class="k" data-i18n="contact.person_label">Contact person</span>
+                  <span class="v">Mr. Wei Si Yu</span>
+                </div>
+                <div class="contact-point">
+                  <span class="k" data-i18n="contact.email_label">Email</span>
+                  <span class="v"><a href="mailto:weisiyu@chunxuecambodia.com">weisiyu@chunxuecambodia.com</a></span>
+                </div>
+                <div class="contact-point">
+                  <span class="k" data-i18n="contact.phone_label">Phone</span>
+                  <span class="v">+86 137 6628 8999<br />+855 097 608 9888</span>
+                </div>
+              </div>
+              <div style="height: 14px;"></div>
+              <div class="contact-point" style="background: rgba(29, 92, 79, 0.06);">
+                <span class="k" data-i18n="contact.addr_label">Address</span>
+                <span class="v">National Road No.21, Prek Bek Village, Koh Thom "B" Commune, Koh Thom District, Kandal Province, Kingdom of Cambodia</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div></div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    (function () {
+      const translations = {
+        en: {
+          "nav.about": "Factory Overview",
+          "nav.capabilities": "Core Capabilities",
+          "nav.compliance": "Compliance",
+          "nav.customers": "Customers & Market",
+          "nav.contact": "Contact",
+          "hero.tag_1": "Founded in 2015",
+          "hero.tag_2": "Premium knitwear OEM",
+          "stats.capacity": "Annual capacity / pcs",
+          "stats.employees": "Employees",
+          "stats.plant": "Plant area",
+          "stats.prod": "Production area",
+          "about.title": "Factory Overview",
+          "about.m1": "Factory established",
+          "about.m2": "Plant area",
+          "about.m3": "Production area",
+          "about.m4": "Knitting Machine",
+          "cap.title": "Core Capabilities",
+          "cap.info_title": "Factory Information",
+          "cap.product_label": "Main product",
+          "cap.process_label": "Production process",
+          "cap.process_value": "Knitting / Linking / Washing / Sewing / Finishing / Packing",
+          "cap.business_label": "Business term",
+          "cap.business_value": "CMT, FOB, DDP",
+          "cap.output_label": "Annual output",
+          "cap.sample_label": "Sample",
+          "cap.sample_value": "OEM, ODM development",
+          "cap.product_title": "Products & Technology",
+          "cap.green_title": "Green Measures",
+          "cap.green_1": "Solar panels installed capacity, covering about 50% of factory power consumption.",
+          "cap.green_2": "Insulation film area, reducing around 80% of heat absorption.",
+          "comp.title": "Compliance",
+          "comp.audit_title": "Human Rights & Factory Audits",
+          "comp.sustain_title": "Sustainability Standards",
+          "cust.title": "Customers & Market",
+          "cust.market_title": "Market Allocation",
+          "contact.title": "Contact the Factory",
+          "contact.cta": "Contact Now",
+          "contact.person_label": "Contact person",
+          "contact.email_label": "Email",
+          "contact.phone_label": "Phone",
+          "contact.addr_label": "Address"
+        },
+        zh: {
+          "nav.about": "工厂简介",
+          "nav.capabilities": "核心能力",
+          "nav.compliance": "合规认证",
+          "nav.customers": "客户与市场",
+          "nav.contact": "联系工厂",
+          "hero.tag_1": "2015 成立",
+          "hero.tag_2": "高端针织 OEM",
+          "stats.capacity": "年产能 / pcs",
+          "stats.employees": "员工规模",
+          "stats.plant": "厂区面积",
+          "stats.prod": "生产面积",
+          "about.title": "工厂概况",
+          "about.m1": "工厂成立",
+          "about.m2": "厂区面积",
+          "about.m3": "生产面积",
+          "about.m4": "织机台数",
+          "cap.title": "核心能力",
+          "cap.info_title": "工厂信息",
+          "cap.product_label": "主营产品",
+          "cap.process_label": "生产流程",
+          "cap.process_value": "针织 / 拼接 / 水洗 / 缝制 / 整烫 / 包装",
+          "cap.business_label": "贸易条款",
+          "cap.business_value": "CMT, FOB, DDP",
+          "cap.output_label": "年产量",
+          "cap.sample_label": "打样",
+          "cap.sample_value": "OEM, ODM 开发",
+          "cap.product_title": "产品与技术",
+          "cap.green_title": "环保措施",
+          "cap.green_1": "300kW 太阳能板装机容量，约覆盖工厂 50% 用电。",
+          "cap.green_2": "7,000㎡ 隔热膜面积，可减少约 80% 的热量吸收。",
+          "comp.title": "合规认证",
+          "comp.audit_title": "人权验厂与工厂验厂",
+          "comp.sustain_title": "可持续标准",
+          "cust.title": "客户与市场",
+          "cust.market_title": "市场分布",
+          "contact.title": "联系工厂",
+          "contact.cta": "立即联系",
+          "contact.person_label": "联系人",
+          "contact.email_label": "邮箱",
+          "contact.phone_label": "电话",
+          "contact.addr_label": "地址"
+        }
+      };
+
+      const buttons = Array.from(document.querySelectorAll(".lang-btn"));
+      const nodes = Array.from(document.querySelectorAll("[data-i18n]"));
+
+      function applyLanguage(lang) {
+        document.documentElement.lang = lang === "zh" ? "zh-CN" : "en";
+        localStorage.setItem("chunxue-lang", lang);
+        buttons.forEach((btn) => btn.classList.toggle("is-active", btn.dataset.lang === lang));
+        nodes.forEach((node) => {
+          const key = node.dataset.i18n;
+          if (translations[lang] && translations[lang][key]) {
+            node.textContent = translations[lang][key];
+          }
+        });
+      }
+
+      buttons.forEach((btn) => {
+        btn.addEventListener("click", () => applyLanguage(btn.dataset.lang));
+      });
+
+      applyLanguage(localStorage.getItem("chunxue-lang") || "en");
+    })();
+  </script>
+</body>
+</html>
