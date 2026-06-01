@@ -181,6 +181,10 @@
       color: var(--brand);
     }
 
+    .title-main {
+      color: inherit;
+    }
+
     .title .accent {
       display: inline;
       color: inherit;
@@ -485,15 +489,11 @@
       <div class="container topbar-inner">
         <div class="brand-mark">
           <img class="brand-logo" src="small-logo.jpg" alt="Chun Xue logo" />
-          <div>
-            <div>Chun Xue</div>
-            <div style="font-size: 0.85rem; color: var(--muted); font-weight: 500;">Cambodia Cashmere Textile</div>
-          </div>
         </div>
         <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap;">
           <nav class="top-links" aria-label="Page navigation">
-            <a href="#about" data-i18n="nav.about">Factory Overview</a>
-            <a href="#capabilities" data-i18n="nav.capabilities">Core Capabilities</a>
+            <a href="#about" data-i18n="nav.about">Overview</a>
+            <a href="#capabilities" data-i18n="nav.capabilities">Capabilities</a>
             <a href="#compliance" data-i18n="nav.compliance">Compliance</a>
             <a href="#customers" data-i18n="nav.customers">Customers & Market</a>
             <a href="#contact" data-i18n="nav.contact">Contact</a>
@@ -511,7 +511,8 @@
         <div class="container hero-grid">
           <article class="hero-card reveal">
             <h1 class="title">
-              Chun Xue <span class="accent">(Cambodia) Cashmere Textile Co., Ltd.</span>
+              <span class="title-main" data-i18n="hero.company_main">Chun Xue</span>
+              <span class="accent" data-i18n="hero.company_suffix">(Cambodia) Cashmere Textile Co., Ltd.</span>
             </h1>
           </article>
 
@@ -561,7 +562,7 @@
                 <div class="info-list">
                   <div class="info-row">
                     <div class="info-label" data-i18n="cap.product_label">Main product</div>
-                    <div class="info-value">SWEATER - Ladies, Men's, Kid's</div>
+                    <div class="info-value">Sweater/Knitted garments/ Knitted accessories - Ladies, Men's, Kid's</div>
                   </div>
                   <div class="info-row">
                     <div class="info-label" data-i18n="cap.process_label">Production process</div>
@@ -586,11 +587,13 @@
                 <h3 data-i18n="cap.product_title">Products & Technology</h3>
                 <div class="chips">
                   <span class="chip">Cashmere</span>
-                  <span class="chip">Cashmere blended</span>
-                  <span class="chip">Merino wool</span>
+                  <span class="chip">Wool</span>
                   <span class="chip">Cotton</span>
                   <span class="chip">Linen</span>
                   <span class="chip">Viscose</span>
+                  <span class="chip">Acrylic</span>
+                  <span class="chip">Polyester</span>
+                  <span class="chip">Blended yarn</span>
                   <span class="chip">3/5/7/12/14GG</span>
                 </div>
                 <div style="height: 18px;"></div>
@@ -732,15 +735,14 @@
               <div class="contact-points">
                 <div class="contact-point">
                   <span class="k" data-i18n="contact.person_label">Contact person</span>
-                  <span class="v">Mr. Wei Si Yu</span>
-                </div>
-                <div class="contact-point">
-                  <span class="k" data-i18n="contact.other_label">Additional contact</span>
-                  <span class="v">Mr. Tao Ping<br />taoping@chunxuecambodia.com</span>
+                  <span class="v">Mr. Wei Si Yu<br />Mr. Tao Ping</span>
                 </div>
                 <div class="contact-point">
                   <span class="k" data-i18n="contact.email_label">Email</span>
-                  <span class="v"><a href="mailto:weisiyu@chunxuecambodia.com">weisiyu@chunxuecambodia.com</a></span>
+                  <span class="v">
+                    <a href="mailto:weisiyu@chunxuecambodia.com">weisiyu@chunxuecambodia.com</a><br />
+                    <a href="mailto:taoping@chunxuecambodia.com">taoping@chunxuecambodia.com</a>
+                  </span>
                 </div>
                 <div class="contact-point">
                   <span class="k" data-i18n="contact.phone_label">Phone</span>
@@ -769,13 +771,15 @@
     (function () {
       const translations = {
         en: {
-          "nav.about": "Factory Overview",
-          "nav.capabilities": "Core Capabilities",
+          "nav.about": "Overview",
+          "nav.capabilities": "Capabilities",
           "nav.compliance": "Compliance",
           "nav.customers": "Customers & Market",
           "nav.contact": "Contact",
           "hero.tag_1": "Founded in 2015",
           "hero.tag_2": "Premium knitwear OEM",
+          "hero.company_main": "Chun Xue",
+          "hero.company_suffix": "(Cambodia) Cashmere Textile Co., Ltd.",
           "stats.capacity": "Annual capacity / pcs",
           "stats.employees": "Employees",
           "stats.plant": "Plant area",
@@ -807,19 +811,20 @@
           "contact.title": "Contact the Factory",
           "contact.cta": "Contact Now",
           "contact.person_label": "Contact person",
-          "contact.other_label": "Additional contact",
           "contact.email_label": "Email",
           "contact.phone_label": "Phone",
           "contact.addr_label": "Address"
         },
         zh: {
-          "nav.about": "工厂简介",
-          "nav.capabilities": "核心能力",
+          "nav.about": "概览",
+          "nav.capabilities": "能力",
           "nav.compliance": "合规认证",
           "nav.customers": "客户与市场",
           "nav.contact": "联系工厂",
           "hero.tag_1": "2015 成立",
           "hero.tag_2": "高端针织 OEM",
+          "hero.company_main": "春雪",
+          "hero.company_suffix": "（柬埔寨）羊绒纺织品有限公司",
           "stats.capacity": "年产能 / pcs",
           "stats.employees": "员工规模",
           "stats.plant": "厂区面积",
@@ -851,7 +856,6 @@
           "contact.title": "联系工厂",
           "contact.cta": "立即联系",
           "contact.person_label": "联系人",
-          "contact.other_label": "其他联系人",
           "contact.email_label": "邮箱",
           "contact.phone_label": "电话",
           "contact.addr_label": "地址"
