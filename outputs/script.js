@@ -35,9 +35,9 @@ const sampleRows = [
   {id:'men', zh:'男装', en:'Menswear', items:[['men','男装','Menswear'],['men-2','男装','Menswear'],['men-3','男装','Menswear'],['men-4','男装','Menswear']]},
   {id:'kids-accessories', zh:'童装与配饰', en:'Kidswear & Accessories', items:[['kids','童装','Kidswear'],['kids-2','童装','Kidswear'],['accessories','配饰','Accessories'],['accessories-2','配饰','Accessories']]}
 ];
-let language = 'zh';
+let language = 'en';
 let selectedProcess = 0;
-try { language = localStorage.getItem('chunxue-language') === 'en' ? 'en' : 'zh'; } catch (_) {}
+try { language = localStorage.getItem('chunxue-language') === 'zh' ? 'zh' : 'en'; } catch (_) {}
 const nav = document.getElementById('nav');
 const menu = document.getElementById('menu');
 function closeMenu() { nav.classList.remove('open'); menu.setAttribute('aria-expanded','false'); }

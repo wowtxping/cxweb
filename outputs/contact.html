@@ -6,12 +6,12 @@
   <script>
     (() => {
       try {
-        if (localStorage.getItem('chunxue-language') !== 'en') return;
-      } catch (_) { return; }
+        if (localStorage.getItem('chunxue-language') === 'zh') return;
+      } catch (_) {}
       const root = document.documentElement;
       root.lang = 'en';
       root.setAttribute('data-language-pending', '');
-      // Keep saved English readable even if the main script cannot load.
+      // Show default or saved English even if the main script cannot load.
       document.addEventListener('DOMContentLoaded', () => {
         if (!root.hasAttribute('data-language-pending')) return;
         document.querySelectorAll('[data-zh][data-en]').forEach(el => { el.innerHTML = el.dataset.en; });
@@ -30,7 +30,7 @@
   <title>Contact us | CHUN XUE 春雪</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='8' fill='%2351382c'/%3E%3Ctext x='20' y='27' text-anchor='middle' font-family='serif' font-size='24' fill='%23faf6f0'%3EC%3C/text%3E%3C/svg%3E">
   <link rel="stylesheet" href="styles.css?v=cooperation-icons-20261002">
-  <script src="script.js?v=process-photos-20261002" defer></script>
+  <script src="script.js?v=default-en-20261005" defer></script>
   <script src="motion.js?v=process-photos-20261002" defer></script>
 </head>
 <body data-title-zh="联系我们" data-title-en="Contact us" class="page-contact"><a class="skip" href="#main" data-zh="跳转到正文" data-en="Skip to content">跳转到正文</a>
