@@ -9,3 +9,4 @@ All website files and optimized images are committed inside `outputs`; archives,
 Pages: index.html, aboutus.html, process.html, collection.html, responsibility.html, contact.html.
 The legacy factory.html address redirects to aboutus.html.
 HTML handling is set to `none` to preserve the existing .html page URLs.
+The outputs/_redirects rule serves index.html at / with a 200 response.
