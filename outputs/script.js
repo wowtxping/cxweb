@@ -98,7 +98,7 @@ function renderImages() {
     img.alt = alt;
     img.loading = key === 'factory-hero' || slot.closest('#collection-grid') ? 'eager' : 'lazy';
     if (key.startsWith('sample-')) { img.width = 1200; img.height = 1200; }
-    img.decoding = 'async';
+    img.decoding = slot.closest('#collection-grid') ? 'sync' : 'async';
     if (key === 'factory-hero') {
       img.width = 1920;
       img.height = 918;

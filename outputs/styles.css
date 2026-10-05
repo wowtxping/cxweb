@@ -296,3 +296,15 @@ h1 .upright-title{font-style:normal;font-weight:400;color:#a98366}
   .market-track > span{transform-origin:left center}
 }
 @keyframes campus-drift{from{transform:scale(1)}to{transform:scale(1.045)}}
+
+/* Keep collection photos in normal flow so all four columns paint reliably. */
+.page-collection .sample{min-width:0}
+.page-collection .sample-image .slot-photo{
+  position:relative;
+  inset:auto;
+  display:block;
+  width:100%;
+  height:auto;
+  aspect-ratio:1/1;
+  object-fit:contain;
+}

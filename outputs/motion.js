@@ -32,7 +32,7 @@
   }
   function observeContent() {
     if (reduced.matches || !observer) return;
-    document.querySelectorAll('.home-manifesto > *, .home-numbers > div, .section-heading, .editorial-card, .craft-copy, .home-closing, .page-intro > *, .facts > div, .about-heading, .about-grid > *, .collection-row-heading, .sample, .green-stats > div, .standards > div, .market > div, .customers, .contact-top, .contact-details > div, .cooperation-intro > *, .phase-heading, .cooperation-steps li, .responsibility-lead > *, .energy-section > *, .standards-intro, .standards-heading, .standard-card').forEach(el => {
+    document.querySelectorAll('.home-manifesto > *, .home-numbers > div, .section-heading, .editorial-card, .craft-copy, .home-closing, .page-intro > *, .facts > div, .about-heading, .about-grid > *, .collection-row-heading, .green-stats > div, .standards > div, .market > div, .customers, .contact-top, .contact-details > div, .cooperation-intro > *, .phase-heading, .cooperation-steps li, .responsibility-lead > *, .energy-section > *, .standards-intro, .standards-heading, .standard-card').forEach(el => {
       if (!seen.has(el)) observer.observe(el);
     });
   }
