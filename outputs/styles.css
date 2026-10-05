@@ -274,3 +274,25 @@ h1 .upright-title{font-style:normal;font-weight:400;color:#a98366}
   .cooperation-photo{transition:transform .9s cubic-bezier(.22,1,.36,1)}
   .cooperation-figure picture:hover .cooperation-photo{transform:scale(1.018)}
 }
+
+/* More visible editorial motion, inspired by the reference website. */
+@media (hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){
+  .image-slot{transition:transform .85s cubic-bezier(.22,1,.36,1),translate .85s cubic-bezier(.22,1,.36,1),box-shadow .85s,background-color .5s}
+  .image-slot:hover,.sample:hover .sample-image,.cooperation-figure picture:hover,.energy-photo:hover{translate:0 -8px;box-shadow:0 24px 42px -15px #39291f40}
+  .editorial-card .image-slot:hover{translate:0 0}
+  .slot-photo,.cooperation-photo{transition:transform 1.4s cubic-bezier(.22,1,.36,1)}
+  .editorial-card:hover .slot-photo,.craft-grid .image-slot:hover .slot-photo,.factory-detail:hover .slot-photo{transform:scale(1.05)}
+  .page-collection .sample:hover .slot-photo,.page-process .process-image:hover .slot-photo{transform:scale(1.025)}
+  .cooperation-figure picture:hover .cooperation-photo{transform:scale(1.05)}
+  .customers span{transition:background-color .45s,color .45s}
+  .customers span:hover{background:#e9dccb;color:#8a5e3b}
+  .standard-logo img{transition:transform .6s cubic-bezier(.22,1,.36,1)}
+  .standard-card:hover .standard-logo img{transform:scale(1.06)}
+  .cooperation-icon{transition:background-color .4s,transform .4s}
+  .cooperation-steps li:hover .cooperation-icon{transform:translateY(-4px);background:#e3cfb7}
+}
+@media (prefers-reduced-motion:no-preference){
+  .hero-media .slot-photo{animation:campus-drift 24s ease-in-out infinite alternate}
+  .market-track > span{transform-origin:left center}
+}
+@keyframes campus-drift{from{transform:scale(1)}to{transform:scale(1.045)}}

@@ -4,6 +4,7 @@
   const fine = matchMedia('(hover: hover) and (pointer: fine)');
   const seen = new WeakSet();
   const active = new Set();
+  const counted = new WeakSet();
   let observer;
   let frame = 0;
   const progress = document.createElement('div');
@@ -19,11 +20,33 @@
   function reveal(element) {
     if (seen.has(element)) return;
     seen.add(element);
+    element.querySelectorAll('.facts strong, .market strong, .energy-stats strong').forEach(countNumber);
+    element.querySelectorAll('.market-track > span').forEach(bar => {
+      animate(bar, [{transform:'scaleX(0)'}, {transform:'scaleX(1)'}], {
+        duration:1500, easing:'cubic-bezier(.22,1,.36,1)', fill:'backwards'
+      });
+    });
     const siblings = element.parentElement?.children;
     const index = siblings ? [...siblings].indexOf(element) : 0;
     animate(element, [{opacity:0, transform:'translateY(24px)'}, {opacity:1, transform:'translateY(0)'}], {
       duration:850, delay:Math.min(index,3)*65, easing:'cubic-bezier(.22,1,.36,1)', fill:'backwards'
     });
+  }
+  function countNumber(element) {
+    if (counted.has(element) || reduced.matches) return;
+    const node = [...element.childNodes].find(n => n.nodeType === 3 && /\d/.test(n.textContent));
+    if (!node) return;
+    const original = node.textContent;
+    const value = Number(original.replace(/,/g, '').trim());
+    if (!Number.isFinite(value) || value === 2015) return;
+    counted.add(element);
+    const start = performance.now();
+    const step = time => {
+      const fraction = reduced.matches ? 1 : Math.min((time - start) / 1500, 1);
+      node.textContent = fraction >= 1 ? original : Math.round(value * (1 - Math.pow(1 - fraction, 4))).toLocaleString('en-US');
+      if (fraction < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
   }
   function observeContent() {
     if (reduced.matches || !observer) return;
