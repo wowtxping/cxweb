@@ -37,7 +37,7 @@ const sampleRows = [
 ];
 let language = 'en';
 let selectedProcess = 0;
-try { language = localStorage.getItem('chunxue-language') === 'zh' ? 'zh' : 'en'; } catch (_) {}
+language = document.documentElement.dataset.initialLanguage || 'en';
 const nav = document.getElementById('nav');
 const menu = document.getElementById('menu');
 function closeMenu() { nav.classList.remove('open'); menu.setAttribute('aria-expanded','false'); }
@@ -96,7 +96,8 @@ function renderImages() {
     const img = new Image();
     img.className = 'slot-photo';
     img.alt = alt;
-    img.loading = key === 'factory-hero' ? 'eager' : 'lazy';
+    img.loading = key === 'factory-hero' || slot.closest('#collection-grid') ? 'eager' : 'lazy';
+    if (key.startsWith('sample-')) { img.width = 1200; img.height = 1200; }
     img.decoding = 'async';
     if (key === 'factory-hero') {
       img.width = 1920;
@@ -105,10 +106,19 @@ function renderImages() {
       img.srcset = 'assets/factory-hero-photo-small.webp 960w, assets/factory-hero-photo.webp 1920w';
       img.sizes = '(max-width: 620px) calc(100vw - 40px), (max-width: 900px) calc(100vw - 72px), 54vw';
     }
-    img.onload = () => slot.classList.add('has-image');
-    img.onerror = () => { img.remove(); slot.classList.remove('has-image'); };
-    img.src = src;
+    let retried = false;
+    const loaded = () => { if (img.naturalWidth > 0 && slot.contains(img)) slot.classList.add('has-image'); };
+    img.onload = loaded;
+    img.onerror = () => {
+      if (!retried && slot.contains(img)) {
+        retried = true;
+        img.removeAttribute('srcset');
+        img.src = `${src}${src.includes('?') ? '&' : '?'}retry=1`;
+      }
+    };
     slot.append(img);
+    img.src = src;
+    if (img.complete) loaded();
   });
 }
 function renderCollection() {
@@ -176,8 +186,12 @@ function applyLanguage() {
   document.title = `${document.body.dataset[language === 'zh' ? 'titleZh' : 'titleEn']} | CHUN XUE 春雪`;
 
   renderProcess();
-  try { localStorage.setItem('chunxue-language',language); } catch (_) {}
   document.documentElement.removeAttribute('data-language-pending');
 }
-document.getElementById('language').addEventListener('click',()=>{language=language==='zh'?'en':'zh';applyLanguage();});
+document.getElementById('language').addEventListener('click',()=>{
+  language=language==='zh'?'en':'zh';
+  document.documentElement.dataset.initialLanguage = language;
+  try { localStorage.setItem('chunxue-language',language); } catch (_) {}
+  applyLanguage();
+});
 applyLanguage();
