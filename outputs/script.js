@@ -37,7 +37,8 @@ const sampleRows = [
 ];
 let language = 'en';
 let selectedProcess = 0;
-language = document.documentElement.dataset.initialLanguage || 'en';
+language = window.SiteI18n?.valid(document.documentElement.dataset.initialLanguage) || 'en';
+const T = (english, chinese) => window.SiteI18n ? SiteI18n.translate(english, language, chinese) : (language === 'zh' ? chinese || english : english);
 const nav = document.getElementById('nav');
 const menu = document.getElementById('menu');
 function closeMenu() { nav.classList.remove('open'); menu.setAttribute('aria-expanded','false'); }
@@ -84,7 +85,7 @@ function renderImages() {
 
       'sample-accessories-2': ['黄色针织围巾', 'Yellow knitted scarf'],
     };
-    const alt = photoAlt[key]?.[language === 'zh' ? 0 : 1]
+    const alt = (photoAlt[key] ? T(photoAlt[key][1], photoAlt[key][0]) : '')
       || slot.querySelector('.placeholder-center')?.textContent.replace('＋','').trim() || '';
     if (existing && existing.getAttribute('src') === src) {
       existing.alt = alt;
@@ -125,7 +126,7 @@ function renderCollection() {
   const grid = document.getElementById('collection-grid');
   if (!grid) return;
   if (!grid.children.length) {
-    grid.innerHTML = sampleRows.map((row,r) => `<section class="collection-row" aria-labelledby="collection-${row.id}"><div class="collection-row-heading"><h3 id="collection-${row.id}" data-zh="${row.zh}" data-en="${row.en}">${row.zh}</h3><span>0${r+1} / ${row.en.toUpperCase()}</span></div><div class="sample-row-grid" tabindex="0" role="region" aria-labelledby="collection-${row.id}">${row.items.map((item,i) => `<article class="sample"><div class="image-slot sample-image" data-image="sample-${item[0]}"><span class="image-index">0${i+1} / ${item[2].toUpperCase()}</span><div class="placeholder-center"><span class="placeholder-symbol">＋</span><span data-zh="样衣图片预留" data-en="Sample image placeholder">样衣图片预留</span></div></div><div class="sample-info"><h4 data-zh="${item[1]}" data-en="${item[2]}">${item[1]}</h4><span>0${i+1}</span></div></article>`).join('')}</div><div class="swipe-hint"><span data-zh="左右滑动，浏览样衣" data-en="Swipe to explore samples">左右滑动，浏览样衣</span><span class="sample-position" aria-hidden="true">01 / 04</span></div></section>`).join('');
+    grid.innerHTML = sampleRows.map((row,r) => `<section class="collection-row" aria-labelledby="collection-${row.id}"><div class="collection-row-heading"><h3 id="collection-${row.id}" data-zh="${row.zh}" data-en="${row.en}">${row.zh}</h3><span data-zh="0${r+1} / ${row.zh}" data-en="0${r+1} / ${row.en}">0${r+1} / ${row.en}</span></div><div class="sample-row-grid" tabindex="0" role="region" aria-labelledby="collection-${row.id}">${row.items.map((item,i) => `<article class="sample"><div class="image-slot sample-image" data-image="sample-${item[0]}"><span class="image-index">0${i+1} / ${item[2].toUpperCase()}</span><div class="placeholder-center"><span class="placeholder-symbol">＋</span><span data-zh="样衣图片预留" data-en="Sample image placeholder">样衣图片预留</span></div></div><div class="sample-info"><h4 data-zh="${item[1]}" data-en="${item[2]}">${item[1]}</h4><span>0${i+1}</span></div></article>`).join('')}</div><div class="swipe-hint"><span data-zh="左右滑动，浏览样衣" data-en="Swipe to explore samples">左右滑动，浏览样衣</span><span class="sample-position" aria-hidden="true">01 / 04</span></div></section>`).join('');
     grid.querySelectorAll('.sample-row-grid').forEach(row => {
       let pending = false;
       row.addEventListener('scroll', () => {
@@ -152,14 +153,14 @@ function renderCollection() {
 function renderProcess(focus = false) {
   if (!document.getElementById("process-tabs")) { renderImages(); return; }
   const p = processes[selectedProcess];
-  document.getElementById('process-tabs').innerHTML = processes.map((item,i) => `<button type="button" class="process-tab" id="tab-${item[0]}" role="tab" aria-controls="process-panel" aria-selected="${i===selectedProcess}" tabindex="${i===selectedProcess?0:-1}" data-step="${i}"><span>0${i+1}</span><div><strong>${language==='zh'?item[1]:item[2]}</strong><small>${item[2].toUpperCase()}</small></div></button>`).join('');
+  document.getElementById('process-tabs').innerHTML = processes.map((item,i) => `<button type="button" class="process-tab" id="tab-${item[0]}" role="tab" aria-controls="process-panel" aria-selected="${i===selectedProcess}" tabindex="${i===selectedProcess?0:-1}" data-step="${i}"><span>0${i+1}</span><div><strong>${T(item[2],item[1])}</strong><small>${T(item[2],item[1]).toUpperCase()}</small></div></button>`).join('');
   document.getElementById('process-panel').setAttribute('aria-labelledby',`tab-${p[0]}`);
   document.getElementById('process-number').textContent = `0${selectedProcess+1}`;
-  document.getElementById('process-title').textContent = language==='zh'?p[1]:p[2];
-  document.getElementById('process-english').textContent = p[2].toUpperCase();
-  document.getElementById('process-text').textContent = p[language==='zh'?3:4];
-  document.getElementById('process-placeholder').textContent = language==='zh'?`${p[1]}工序 · 图片预留`:`${p[2]} · Image placeholder`;
-  document.getElementById('process-image-label').textContent = `0${selectedProcess+1} / ${p[2].toUpperCase()}`;
+  document.getElementById('process-title').textContent = T(p[2],p[1]);
+  document.getElementById('process-english').textContent = T(p[2],p[1]).toUpperCase();
+  document.getElementById('process-text').textContent = T(p[4],p[3]);
+  document.getElementById('process-placeholder').textContent = `${T(p[2],p[1])} · ${T('Image placeholder','图片预留')}`;
+  document.getElementById('process-image-label').textContent = `0${selectedProcess+1} / ${T(p[2],p[1]).toUpperCase()}`;
   document.querySelector('.process-image').dataset.image = `process-${p[0]}`;
   document.querySelector('.process-count').textContent = `0${selectedProcess+1} — 06`;
   if (focus) document.getElementById(`tab-${p[0]}`).focus();
@@ -174,24 +175,16 @@ document.getElementById('process-tabs')?.addEventListener('keydown', e => {
 });
 function applyLanguage() {
   renderCollection();
-  document.documentElement.lang = language==='zh'?'zh-CN':'en';
-  document.querySelectorAll('[data-zh][data-en]').forEach(el => { el.innerHTML=el.dataset[language]; });
-  document.querySelectorAll('[data-alt-zh][data-alt-en]').forEach(el => { el.alt = language === 'zh' ? el.dataset.altZh : el.dataset.altEn; });
-  const button=document.getElementById('language');
-  button.innerHTML=language==='zh'?'EN <span>↗</span>':'中文 <span>↗</span>';
-  button.setAttribute('aria-label',language==='zh'?'Switch to English':'切换到中文');
-  menu.setAttribute('aria-label',language==='zh'?'切换导航菜单':'Toggle navigation');
-  nav.setAttribute('aria-label',language==='zh'?'主导航':'Main navigation');
-  document.getElementById('process-tabs')?.setAttribute('aria-label',language==='zh'?'生产流程':'Production process');
-  document.title = `${document.body.dataset[language === 'zh' ? 'titleZh' : 'titleEn']} | Spring Snow Textile Co., Ltd.`;
-
+  if (window.SiteI18n) {
+    SiteI18n.apply(document, language);
+  } else {
+    document.querySelectorAll('[data-zh][data-en]').forEach(element => { element.innerHTML = element.dataset.en; });
+    document.documentElement.removeAttribute('data-language-pending');
+  }
   renderProcess();
-  document.documentElement.removeAttribute('data-language-pending');
 }
-document.getElementById('language').addEventListener('click',()=>{
-  language=language==='zh'?'en':'zh';
-  document.documentElement.dataset.initialLanguage = language;
-  try { localStorage.setItem('chunxue-language',language); } catch (_) {}
+window.SiteI18n?.initPicker(code => {
+  language = code;
   applyLanguage();
 });
 applyLanguage();
