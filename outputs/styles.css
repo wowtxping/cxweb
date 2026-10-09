@@ -363,3 +363,29 @@ html[lang="ja"],html[lang="ko"]{--serif:'Noto Serif CJK JP','Yu Mincho','Malgun 
 .nav a{white-space:nowrap}
 @media(max-width:1100px){.header .nav{display:none;position:absolute;top:100%;left:0;right:0;padding:24px 36px;background:var(--paper);border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start;gap:12px}.header .nav.open{display:flex}.header .menu{display:block}}
 @media(max-width:620px){.language-picker .language{gap:5px;min-width:65px}.language-options{top:calc(100% + 7px)}.header .nav{padding:20px}html:not([lang="en"]):not([lang="zh-CN"]) .hero-editorial h1,html:not([lang="en"]):not([lang="zh-CN"]) .page-intro h1{font-size:clamp(29px,8.1vw,38px);letter-spacing:0}}
+
+/* Arabic reads right to left; brand placement and Latin identifiers stay stable. */
+html[lang="ar"]{--serif:'Times New Roman',Tahoma,serif}
+html[dir="rtl"] body{font-family:Tahoma,'Segoe UI',Arial,sans-serif}
+html[dir="rtl"] .header,html[dir="rtl"] .site-footer{direction:ltr}
+html[dir="rtl"] .nav,html[dir="rtl"] .contact-link{direction:rtl}
+html[dir="rtl"] .language-options{direction:ltr}
+html[dir="rtl"] .language-options button[dir="rtl"]{text-align:right}
+html[dir="rtl"] h1,html[dir="rtl"] h2,html[dir="rtl"] h3,html[dir="rtl"] h4,html[dir="rtl"] .eyebrow,html[dir="rtl"] .section-aside,html[dir="rtl"] .page-kicker,html[dir="rtl"] .hero-topline,html[dir="rtl"] .image-index,html[dir="rtl"] .collection-row-heading>span,html[dir="rtl"] .news-factories span{letter-spacing:0}
+html[dir="rtl"] .hero-editorial h1,html[dir="rtl"] .page-intro h1{letter-spacing:0;line-height:1.5}
+html[dir="rtl"] .news-copy h2{line-height:1.5}
+html[dir="rtl"] .facts strong,html[dir="rtl"] .market strong,html[dir="rtl"] .green-stats strong,html[dir="rtl"] .energy-stats strong,html[dir="rtl"] .process-big,html[dir="rtl"] .process-count{direction:ltr;unicode-bidi:isolate}
+html[dir="rtl"] .facts strong{display:inline-block}
+html[dir="rtl"] .facts strong span{direction:rtl;unicode-bidi:isolate}
+html[dir="rtl"] a[href^="mailto:"],html[dir="rtl"] a[href^="tel:"],html[dir="rtl"] .footer-factory-name,html[dir="rtl"] .footer-factory-address,html[dir="rtl"] .factory-facts-heading,html[dir="rtl"] .news-factories{direction:ltr;unicode-bidi:isolate}
+html[dir="rtl"] .cooperation-email{margin-left:0;margin-right:0}
+html[dir="rtl"] .sample-row-grid{direction:ltr}
+html[dir="rtl"] .sample,html[dir="rtl"] .sample-info{direction:rtl}
+html[dir="rtl"] .process-tab{text-align:right;padding-left:18px;padding-right:0}
+html[dir="rtl"] .process-description{padding-left:0;padding-right:20px}
+@media(max-width:620px){html[dir="rtl"] .process-description{padding-right:0}html[dir="rtl"] .process-big{float:left}}
+html[dir="rtl"] .process-tab[aria-selected="true"]:after{left:20px;right:0}
+html[dir="rtl"] .cooperation-steps li{padding-left:0;padding-right:22px;border-left:0;border-right:1px solid #d5c2ad}
+html[dir="rtl"] .cooperation-steps li:first-child{padding-right:0;border:0}
+@media(max-width:1000px){html[dir="rtl"] .cooperation-steps li:nth-child(odd){padding-right:0;border:0}}
+@media(max-width:620px){html[dir="rtl"] .cooperation-steps li,html[dir="rtl"] .cooperation-steps li:first-child,html[dir="rtl"] .cooperation-steps li:nth-child(odd){padding:0 55px 24px 0;border:0}html[dir="rtl"] .cooperation-steps li:before{left:auto;right:14px}html[dir="rtl"] .cooperation-step-visual .cooperation-number{left:auto;right:0}html[dir="rtl"] .cooperation-steps li:last-child{padding-bottom:0}}

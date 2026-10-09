@@ -170,7 +170,8 @@ document.getElementById('process-tabs')?.addEventListener('click', e => { const 
 document.getElementById('process-tabs')?.addEventListener('keydown', e => {
   if(!['ArrowRight','ArrowLeft','Home','End'].includes(e.key))return;
   e.preventDefault();
-  selectedProcess=e.key==='Home'?0:e.key==='End'?5:(selectedProcess+(e.key==='ArrowRight'?1:5))%6;
+  const forward = e.key === (document.documentElement.dir === 'rtl' ? 'ArrowLeft' : 'ArrowRight');
+  selectedProcess=e.key==='Home'?0:e.key==='End'?5:(selectedProcess+(forward?1:5))%6;
   renderProcess(true);
 });
 function applyLanguage() {
