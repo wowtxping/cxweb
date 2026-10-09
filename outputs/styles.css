@@ -307,3 +307,11 @@ h1 .upright-title{font-style:normal;font-weight:400;color:#a98366}
   aspect-ratio:1/1;
   object-fit:contain;
 }
+
+/* Two factory identities, each paired with its own address. */
+.site-footer .footer-bottom.footer-factories{display:grid;gap:18px}
+.footer-factory{display:grid;grid-template-columns:minmax(260px,.9fr) minmax(0,2fr);align-items:baseline;gap:32px}
+.footer-factory-name{font-size:11px;letter-spacing:.2px;line-height:1.8}
+.footer-factory-address{margin:0;font-style:normal;font-size:12px;line-height:1.8;color:#d8c6b5;text-align:right;white-space:nowrap;overflow-x:auto;scrollbar-width:thin;min-width:0}
+@media(max-width:1100px){.footer-factory{grid-template-columns:1fr;gap:6px}.footer-factory-address{text-align:left}}
+@media(max-width:620px){.site-footer .footer-bottom.footer-factories{gap:22px}.footer-factory-name,.footer-factory-address{font-size:11px}}
