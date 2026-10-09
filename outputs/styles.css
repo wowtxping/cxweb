@@ -179,14 +179,13 @@ h2{font-size:clamp(30px,3vw,46px)}
 /* Showroom photograph: retain the full room composition. */
 .page-factory .factory-detail{min-height:0;aspect-ratio:4/3;align-self:center}
 
-/* Display the supplied emblem and English lettering; the SVG viewport excludes Chinese. */
+/* Spring Snow vector logos, with whitespace removed from the source viewport. */
 .brand{display:flex;align-items:center;flex-shrink:0;line-height:0}
-.chunxue-logo{display:block;overflow:hidden;width:172px;height:auto;aspect-ratio:2044/825}
-.brand .chunxue-logo{mix-blend-mode:multiply}
+.spring-snow-logo{display:block;width:146px;height:auto;aspect-ratio:651/387}
 .footer-wordmark{display:inline-flex;align-items:center;line-height:0;flex-shrink:0}
-.footer-wordmark .chunxue-logo{width:220px;filter:grayscale(1) invert(1);mix-blend-mode:screen}
-@media(max-width:1050px){.brand .chunxue-logo{width:146px}}
-@media(max-width:620px){.brand .chunxue-logo{width:126px}.footer-wordmark .chunxue-logo{width:190px}}
+.footer-wordmark .spring-snow-logo{width:200px}
+@media(max-width:1050px){.brand .spring-snow-logo{width:120px}}
+@media(max-width:620px){.brand .spring-snow-logo{width:100px}.footer-wordmark .spring-snow-logo{width:170px}}
 
 /* Contact begins with the partnership overview; address closes the page. */
 .cooperation-email{display:block;width:fit-content;max-width:100%;font:clamp(22px,2.3vw,34px)/1.5 var(--serif);border-bottom:1px solid var(--accent);overflow-wrap:anywhere;margin:-6px 0 30px}

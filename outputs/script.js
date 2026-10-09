@@ -56,8 +56,8 @@ function renderImages() {
       'process-washing': ['水洗车间与洗涤设备', 'Washing workshop and washing machines'],
       'process-linking': ['拼接车间', 'Linking workshop'],
       'process-knitting': ['针织车间与电脑横机', 'Knitting workshop with computerized flat knitting machines'],
-      'factory-hero': ['春雪工厂厂区航拍', 'Aerial view of the Chun Xue factory campus'],
-      'factory-detail': ['春雪样衣展厅与洽谈空间', 'Chun Xue sample showroom and meeting space'],
+      'factory-hero': ['Spring Snow Textile Co., Ltd.工厂厂区航拍', 'Aerial view of the Spring Snow Textile Co., Ltd. factory campus'],
+      'factory-detail': ['Spring Snow Textile Co., Ltd.样衣展厅与洽谈空间', 'Spring Snow Textile Co., Ltd. sample showroom and meeting space'],
       'home-knitting': ['电脑横机针织设备', 'Computerized flat knitting machine'],
       'sample-women': ['米白色高领针织上衣', 'Cream turtleneck knitwear'],
       'sample-men': ['灰色拉链针织外套', 'Grey zip-front knitted jacket'],
@@ -183,7 +183,7 @@ function applyLanguage() {
   menu.setAttribute('aria-label',language==='zh'?'切换导航菜单':'Toggle navigation');
   nav.setAttribute('aria-label',language==='zh'?'主导航':'Main navigation');
   document.getElementById('process-tabs')?.setAttribute('aria-label',language==='zh'?'生产流程':'Production process');
-  document.title = `${document.body.dataset[language === 'zh' ? 'titleZh' : 'titleEn']} | CHUN XUE 春雪`;
+  document.title = `${document.body.dataset[language === 'zh' ? 'titleZh' : 'titleEn']} | Spring Snow Textile Co., Ltd.`;
 
   renderProcess();
   document.documentElement.removeAttribute('data-language-pending');
