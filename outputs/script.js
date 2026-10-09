@@ -24,7 +24,7 @@ const imageAssets = {
 };
 const processes = [
   ['knitting', '针织', 'Knitting', '从纱线到织片，让材质与针法相遇，构成服装的基础。', 'Yarn becomes knitted panels, bringing together material and stitch to form the foundation of a garment.'],
-  ['linking', '拼接', 'Linking', '将织片逐一连接，让分散的结构成为完整的衣身。', 'Knitted panels are linked together, assembling individual components into a garment.'],
+  ['linking', '缝盘', 'Linking', '将织片逐一连接，让分散的结构成为完整的衣身。', 'Knitted panels are linked together, assembling individual components into a garment.'],
   ['washing', '水洗', 'Washing', '通过水洗工序，整理织物状态，呈现纱线的触感。', 'Washing conditions the knitted fabric and brings out the feel of the yarn.'],
   ['sewing', '缝制', 'Sewing', '完成缝制与细节组装，让服装逐步成形。', 'Sewing and detail assembly bring the garment into its finished form.'],
   ['finishing', '整烫', 'Finishing', '整理衣身形态与外观，展现成衣的线条和质感。', 'Finishing shapes and smooths the garment, defining its lines and texture.'],
@@ -54,7 +54,7 @@ function renderImages() {
       'process-finishing': ['整烫车间', 'Finishing workshop'],
       'process-sewing': ['缝制车间', 'Sewing workshop'],
       'process-washing': ['水洗车间与洗涤设备', 'Washing workshop and washing machines'],
-      'process-linking': ['拼接车间', 'Linking workshop'],
+      'process-linking': ['缝盘车间', 'Linking workshop'],
       'process-knitting': ['针织车间与电脑横机', 'Knitting workshop with computerized flat knitting machines'],
       'factory-hero': ['Spring Snow Textile Co., Ltd.工厂厂区航拍', 'Aerial view of the Spring Snow Textile Co., Ltd. factory campus'],
       'factory-detail': ['Spring Snow Textile Co., Ltd.样衣展厅与洽谈空间', 'Spring Snow Textile Co., Ltd. sample showroom and meeting space'],
