@@ -315,3 +315,12 @@ h1 .upright-title{font-style:normal;font-weight:400;color:#a98366}
 .footer-factory-address{margin:0;font-style:normal;font-size:12px;line-height:1.8;color:#d8c6b5;text-align:right;white-space:nowrap;overflow-x:auto;scrollbar-width:thin;min-width:0}
 @media(max-width:1100px){.footer-factory{grid-template-columns:1fr;gap:6px}.footer-factory-address{text-align:left}}
 @media(max-width:620px){.site-footer .footer-bottom.footer-factories{gap:22px}.footer-factory-name,.footer-factory-address{font-size:11px}}
+
+/* About us: distinct capacity profiles for the two Cambodian factories. */
+.factory-profiles{padding-bottom:8px}
+.factory-profile+.factory-profile{margin-top:32px}
+.factory-facts-heading{font:26px/1.3 var(--serif);letter-spacing:1px;margin-bottom:18px}
+.factory-profile .facts>div{min-width:0}
+.factory-profile .facts p{max-width:190px;line-height:1.6}
+.page-factory .page-intro>p{max-width:880px}
+@media(max-width:620px){.factory-facts-heading{font-size:23px;margin-bottom:14px}.factory-profile+.factory-profile{margin-top:26px}}
