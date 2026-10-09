@@ -324,3 +324,22 @@ h1 .upright-title{font-style:normal;font-weight:400;color:#a98366}
 .factory-profile .facts p{max-width:190px;line-height:1.6}
 .page-factory .page-intro>p{max-width:880px}
 @media(max-width:620px){.factory-facts-heading{font-size:23px;margin-bottom:14px}.factory-profile+.factory-profile{margin-top:26px}}
+
+/* News: editorial imagery and a concise bilingual company notice. */
+.news-section{padding-bottom:100px}
+.news-feature{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(32px,5vw,76px);align-items:start;border-top:1px solid var(--line);padding-top:36px}
+.news-image{margin:0;overflow:hidden;background:#e9ddcd}
+.news-image img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:contain;transition:transform .9s cubic-bezier(.22,1,.36,1)}
+.news-meta{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:22px;color:var(--muted)}
+.news-meta .eyebrow{color:var(--accent);font-size:10px}
+.news-meta time{font-size:12px}
+.news-copy h2{font-size:clamp(30px,3vw,44px);line-height:1.25;letter-spacing:-.5px;margin-bottom:20px}
+.news-holiday-dates{font:clamp(22px,2.4vw,32px)/1.4 var(--serif);color:var(--accent)}
+.news-factories{display:flex;gap:12px;flex-wrap:wrap;margin:18px 0 24px}
+.news-factories span{padding:5px 14px;border:1px solid var(--line);font-size:11px;letter-spacing:1.2px}
+.news-copy>p{font-size:15px;line-height:1.9;color:var(--muted);margin-bottom:16px}
+.news-enquiries{padding-top:20px;margin-top:26px;border-top:1px solid var(--line)}
+.news-enquiries p{font-size:13px;color:var(--muted);margin-bottom:12px}
+@media(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){.news-image:hover img{transform:scale(1.025)}}
+@media(max-width:1000px){.news-feature{grid-template-columns:1fr;gap:32px}.news-image{max-width:760px}.news-copy{max-width:760px}.news-section{padding-bottom:70px}}
+@media(max-width:620px){.news-feature{padding-top:24px;gap:28px}.news-copy h2{font-size:30px}.news-meta{margin-bottom:18px}.news-copy>p{font-size:14px}.news-section{padding-bottom:50px}}
