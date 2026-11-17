@@ -1,0 +1,610 @@
+[
+  {
+    "path": "index.html",
+    "url": "https://sscakh.com/",
+    "language": "en",
+    "page": "index",
+    "hash": "cfdcc3a2cfd4cc225dafe4022609a080fc34194a9c5d862a482bd3801cf66b32",
+    "lastmod": "2026-11-17"
+  },
+  {
+    "path": "zh/index.html",
+    "url": "https://sscakh.com/zh/index.html",
+    "language": "zh-CN",
+    "page": "index",
+    "hash": "f56a753f780f0a54c718ea56b2d340556b82e608c20a9135c76a6a6e4874674b",
+    "lastmod": "2026-11-17"
+  },
+  {
+    "path": "fr/index.html",
+    "url": "https://sscakh.com/fr/index.html",
+    "language": "fr",
+    "page": "index",
+    "hash": "a3af4ae4c9da5f016c5762f1fccd6190931547d699ebb6cdf06b2f99140985a5",
+    "lastmod": "2026-11-17"
+  },
+  {
+    "path": "de/index.html",
+    "url": "https://sscakh.com/de/index.html",
+    "language": "de",
+    "page": "index",
+    "hash": "1ddc99764052468b32bb3f201c4f53de73d1a59921ce088b82be6956f7cc0b94",
+    "lastmod": "2026-11-17"
+  },
+  {
+    "path": "es/index.html",
+    "url": "https://sscakh.com/es/index.html",
+    "language": "es",
+    "page": "index",
+    "hash": "36eaf17e74f8ae75c94e9423364641de86df8fc0e55115c5b6437106899746a4",
+    "lastmod": "2026-11-17"
+  },
+  {
+    "path": "it/index.html",
+    "url": "https://sscakh.com/it/index.html",
+    "language": "it",
+    "page": "index",
+    "hash": "4e5f00103eb835ff6c559cfdd4acf22989bd7d3b02a2b4a71ef7a3f1942ba4ee",
+    "lastmod": "2026-11-17"
+  },
+  {
+    "path": "pt/index.html",
+    "url": "https://sscakh.com/pt/index.html",
+    "language": "pt",
+    "page": "index",
+    "hash": "8dd9ed50a4fa663d6b89c6d71e90b406bdaa4cf8f8e1b4175ee52db415e4794a",
+    "lastmod": "2026-11-17"
+  },
+  {
+    "path": "ja/index.html",
+    "url": "https://sscakh.com/ja/index.html",
+    "language": "ja",
+    "page": "index",
+    "hash": "9a5dcd342230a263ea81a060c134b38a6df37b156dac87103c5ffc728be5c475",
+    "lastmod": "2026-11-17"
+  },
+  {
+    "path": "ko/index.html",
+    "url": "https://sscakh.com/ko/index.html",
+    "language": "ko",
+    "page": "index",
+    "hash": "f68ea9e2007633ed1911e53ba9e33eee092f2057825f9740ac18155f55db52b5",
+    "lastmod": "2026-11-17"
+  },
+  {
+    "path": "ar/index.html",
+    "url": "https://sscakh.com/ar/index.html",
+    "language": "ar",
+    "page": "index",
+    "hash": "866defa523edb636e27a69e4df1bc35e3c90bb94977f72553e05c55fa5e6f554",
+    "lastmod": "2026-11-17"
+  },
+  {
+    "path": "aboutus.html",
+    "url": "https://sscakh.com/aboutus.html",
+    "language": "en",
+    "page": "aboutus",
+    "hash": "b8b8d4f9b3be56cdea0ee4aa5eae6fd0d0152cc5ff4a529643903c1657e99eb9",
+    "lastmod": "2026-11-17"
+  },
+  {
+    "path": "zh/aboutus.html",
+    "url": "https://sscakh.com/zh/aboutus.html",
+    "language": "zh-CN",
+    "page": "aboutus",
+    "hash": "e7290edbb43656f6027690fbec705774ba6acf5751c596e8fa04ccb5234a127a",
+    "lastmod": "2026-11-17"
+  },
+  {
+    "path": "fr/aboutus.html",
+    "url": "https://sscakh.com/fr/aboutus.html",
+    "language": "fr",
+    "page": "aboutus",
+    "hash": "d4e921e10c69ae3462931dac10c50875485ede72cf54f65d6575ba86dfeef5b8",
+    "lastmod": "2026-11-17"
+  },
+  {
+    "path": "de/aboutus.html",
+    "url": "https://sscakh.com/de/aboutus.html",
+    "language": "de",
+    "page": "aboutus",
+    "hash": "cf8d6ed1bc3a6a916379071c2a6e0cbe6f79783ee980d0304d3668a8a4430391",
+    "lastmod": "2026-11-17"
+  },
+  {
+    "path": "es/aboutus.html",
+    "url": "https://sscakh.com/es/aboutus.html",
+    "language": "es",
+    "page": "aboutus",
+    "hash": "e0214b6999af152f0b6a4b15562347d4a37d4deb5eba21de2759b9bf6ae3c649",
+    "lastmod": "2026-11-17"
+  },
+  {
+    "path": "it/aboutus.html",
+    "url": "https://sscakh.com/it/aboutus.html",
+    "language": "it",
+    "page": "aboutus",
+    "hash": "e903605f3cce512ff4c7260cefff73fa85e650e704131deb4aefcac1ba7febbe",
+    "lastmod": "2026-11-17"
+  },
+  {
+    "path": "pt/aboutus.html",
+    "url": "https://sscakh.com/pt/aboutus.html",
+    "language": "pt",
+    "page": "aboutus",
+    "hash": "098f663f60313b134ebce673d0ce6a64ee3034aad114937a049f68f69a4fd193",
+    "lastmod": "2026-11-17"
+  },
+  {
+    "path": "ja/aboutus.html",
+    "url": "https://sscakh.com/ja/aboutus.html",
+    "language": "ja",
+    "page": "aboutus",
+    "hash": "c049e7319d07959c9a0f531e2677bad24812a0417775315d66f640b5792d10fb",
+    "lastmod": "2026-11-17"
+  },
+  {
+    "path": "ko/aboutus.html",
+    "url": "https://sscakh.com/ko/aboutus.html",
+    "language": "ko",
+    "page": "aboutus",
+    "hash": "3c9a3a02053abbfb28c9dc210f04361e3574ca804e0f3678fc615f2c52ffeb99",
+    "lastmod": "2026-11-17"
+  },
+  {
+    "path": "ar/aboutus.html",
+    "url": "https://sscakh.com/ar/aboutus.html",
+    "language": "ar",
+    "page": "aboutus",
+    "hash": "c325eb7d69e3158ada78da6d182a4b62bf2521dda1df766dbeefe20ec593d25b",
+    "lastmod": "2026-11-17"
+  },
+  {
+    "path": "process.html",
+    "url": "https://sscakh.com/process.html",
+    "language": "en",
+    "page": "process",
+    "hash": "7fd32f02f2007cfa0be258d5adae5916d8b9fe1cc823a6b6452eb8c6d899a334",
+    "lastmod": "2026-11-17"
+  },
+  {
+    "path": "zh/process.html",
+    "url": "https://sscakh.com/zh/process.html",
+    "language": "zh-CN",
+    "page": "process",
+    "hash": "ba5abd33d5f0174d23a50c96c3146df0875adf198e558b2f1191482674da18e0",
+    "lastmod": "2026-11-17"
+  },
+  {
+    "path": "fr/process.html",
+    "url": "https://sscakh.com/fr/process.html",
+    "language": "fr",
+    "page": "process",
+    "hash": "4afda912468ce8da270543bd6d6d53b8279e9075b992b55ed033dbd3dc95eea1",
+    "lastmod": "2026-11-17"
+  },
+  {
+    "path": "de/process.html",
+    "url": "https://sscakh.com/de/process.html",
+    "language": "de",
+    "page": "process",
+    "hash": "e8fb332a3e91fc923cc17fbd12f823f9f3c3a10bb05eb031bfda9e083f1f282e",
+    "lastmod": "2026-11-17"
+  },
+  {
+    "path": "es/process.html",
+    "url": "https://sscakh.com/es/process.html",
+    "language": "es",
+    "page": "process",
+    "hash": "a43a442b35ffda2362e132b380cd59d2d47de969ab2649a3919a468087c7d5e0",
+    "lastmod": "2026-11-17"
+  },
+  {
+    "path": "it/process.html",
+    "url": "https://sscakh.com/it/process.html",
+    "language": "it",
+    "page": "process",
+    "hash": "f01657ff1b535f69efaea64eede32c7af87ed0b8e97b373f2932170b7e7ecd20",
+    "lastmod": "2026-11-17"
+  },
+  {
+    "path": "pt/process.html",
+    "url": "https://sscakh.com/pt/process.html",
+    "language": "pt",
+    "page": "process",
+    "hash": "5cb0ed1297a9793544d82a858c82b96b6d29381283f655b8a18fc4de0d643894",
+    "lastmod": "2026-11-17"
+  },
+  {
+    "path": "ja/process.html",
+    "url": "https://sscakh.com/ja/process.html",
+    "language": "ja",
+    "page": "process",
+    "hash": "378626b98409ce76f264fd36bcf2425f1cb686363b27ca3fcba6b2daefba5bba",
+    "lastmod": "2026-11-17"
+  },
+  {
+    "path": "ko/process.html",
+    "url": "https://sscakh.com/ko/process.html",
+    "language": "ko",
+    "page": "process",
+    "hash": "b09d1114321b25b71c505efa52f7dda3abf9a43e637e1e03da5543bddd30b9fe",
+    "lastmod": "2026-11-17"
+  },
+  {
+    "path": "ar/process.html",
+    "url": "https://sscakh.com/ar/process.html",
+    "language": "ar",
+    "page": "process",
+    "hash": "b4e49a2236aa266022501105f2ab199ca29b8e8b2b6f2b45b31a193ac391b60e",
+    "lastmod": "2026-11-17"
+  },
+  {
+    "path": "collection.html",
+    "url": "https://sscakh.com/collection.html",
+    "language": "en",
+    "page": "collection",
+    "hash": "6747f2f08fa106feea00117201cadfb5474ccb10a2a43c0232e11a9f56d286d0",
+    "lastmod": "2026-11-17"
+  },
+  {
+    "path": "zh/collection.html",
+    "url": "https://sscakh.com/zh/collection.html",
+    "language": "zh-CN",
+    "page": "collection",
+    "hash": "d4759af976a238bb2f3f870ed8643dcbfa5e734810c6338c4e9d2c13cd3e8d8b",
+    "lastmod": "2026-11-17"
+  },
+  {
+    "path": "fr/collection.html",
+    "url": "https://sscakh.com/fr/collection.html",
+    "language": "fr",
+    "page": "collection",
+    "hash": "97bd07ee9f322c3da42aab1eddc8fdecc1349cc455d17c151b3d49b91c9286a0",
+    "lastmod": "2026-11-17"
+  },
+  {
+    "path": "de/collection.html",
+    "url": "https://sscakh.com/de/collection.html",
+    "language": "de",
+    "page": "collection",
+    "hash": "747124813bd80c4cb9439c242cf92b7259c3baf5e79eaa9c6668353b3b1ef1cf",
+    "lastmod": "2026-11-17"
+  },
+  {
+    "path": "es/collection.html",
+    "url": "https://sscakh.com/es/collection.html",
+    "language": "es",
+    "page": "collection",
+    "hash": "b793ba4021101bd403e14c6ea184edb43e6a6ab5a93255f8017b30082c4cf632",
+    "lastmod": "2026-11-17"
+  },
+  {
+    "path": "it/collection.html",
+    "url": "https://sscakh.com/it/collection.html",
+    "language": "it",
+    "page": "collection",
+    "hash": "756b3da144f1b0a7227446799e93ca7ec70202c16e9490084a5d4a1930409a44",
+    "lastmod": "2026-11-17"
+  },
+  {
+    "path": "pt/collection.html",
+    "url": "https://sscakh.com/pt/collection.html",
+    "language": "pt",
+    "page": "collection",
+    "hash": "dd78a8ec58a36c7f05826a52f75d579e815526c17877bc26495bead4d7d23b2b",
+    "lastmod": "2026-11-17"
+  },
+  {
+    "path": "ja/collection.html",
+    "url": "https://sscakh.com/ja/collection.html",
+    "language": "ja",
+    "page": "collection",
+    "hash": "4bcebddb5a9da69ca25b69f25170eb6600fa989d9dc0acef0180c249fa7e740f",
+    "lastmod": "2026-11-17"
+  },
+  {
+    "path": "ko/collection.html",
+    "url": "https://sscakh.com/ko/collection.html",
+    "language": "ko",
+    "page": "collection",
+    "hash": "93b5a4005746311d290757313d3d7135d8f1038ae564436d847b540a5f9e6a64",
+    "lastmod": "2026-11-17"
+  },
+  {
+    "path": "ar/collection.html",
+    "url": "https://sscakh.com/ar/collection.html",
+    "language": "ar",
+    "page": "collection",
+    "hash": "8853a948c6ee02158cd79690d51fd983c9bdf31aa03a13175bf35dacf3c587e3",
+    "lastmod": "2026-11-17"
+  },
+  {
+    "path": "responsibility.html",
+    "url": "https://sscakh.com/responsibility.html",
+    "language": "en",
+    "page": "responsibility",
+    "hash": "556bdb1d7b8ab8eb8ef2dc648290d9449f77eb6502fb6bdfca836f1ff7f4cf94",
+    "lastmod": "2026-11-17"
+  },
+  {
+    "path": "zh/responsibility.html",
+    "url": "https://sscakh.com/zh/responsibility.html",
+    "language": "zh-CN",
+    "page": "responsibility",
+    "hash": "b8fde090f8d24b1b6beece3d98f8a331219ba142de2cd95d3802539ed5fe3e3f",
+    "lastmod": "2026-11-17"
+  },
+  {
+    "path": "fr/responsibility.html",
+    "url": "https://sscakh.com/fr/responsibility.html",
+    "language": "fr",
+    "page": "responsibility",
+    "hash": "913d975e373c27df1d5a969b14c236d4cffc5587329eb3c0a651b938eb41c88c",
+    "lastmod": "2026-11-17"
+  },
+  {
+    "path": "de/responsibility.html",
+    "url": "https://sscakh.com/de/responsibility.html",
+    "language": "de",
+    "page": "responsibility",
+    "hash": "9831344c0cb669efae11e15658115928cf4b49b5288537fba35c7c3c023c7025",
+    "lastmod": "2026-11-17"
+  },
+  {
+    "path": "es/responsibility.html",
+    "url": "https://sscakh.com/es/responsibility.html",
+    "language": "es",
+    "page": "responsibility",
+    "hash": "fa6724475d8054cd4f98fa5e03b649cdf421b7da7ae164a1910f3f81576e543c",
+    "lastmod": "2026-11-17"
+  },
+  {
+    "path": "it/responsibility.html",
+    "url": "https://sscakh.com/it/responsibility.html",
+    "language": "it",
+    "page": "responsibility",
+    "hash": "88cc471b22eebdf1abaf1cdc8ae985b2b70deeb60b2976caeb8433865991fecf",
+    "lastmod": "2026-11-17"
+  },
+  {
+    "path": "pt/responsibility.html",
+    "url": "https://sscakh.com/pt/responsibility.html",
+    "language": "pt",
+    "page": "responsibility",
+    "hash": "8664b9e33b2e7f320cf48842be0523360faa6e3761c8bf00d12dda3db53dbfd0",
+    "lastmod": "2026-11-17"
+  },
+  {
+    "path": "ja/responsibility.html",
+    "url": "https://sscakh.com/ja/responsibility.html",
+    "language": "ja",
+    "page": "responsibility",
+    "hash": "3349b8611ccba72a6076748be4604ae223cf4076e02e0f7ddefdcd4e53a82719",
+    "lastmod": "2026-11-17"
+  },
+  {
+    "path": "ko/responsibility.html",
+    "url": "https://sscakh.com/ko/responsibility.html",
+    "language": "ko",
+    "page": "responsibility",
+    "hash": "2ef7c1d76fc89579488103f6d6c5ebde95a42af452d2d60feb1e4bc48eeaa327",
+    "lastmod": "2026-11-17"
+  },
+  {
+    "path": "ar/responsibility.html",
+    "url": "https://sscakh.com/ar/responsibility.html",
+    "language": "ar",
+    "page": "responsibility",
+    "hash": "23877930472bb64dbce1dd53b73db99de3ce78ba5bf2fb150a551ea3c4917497",
+    "lastmod": "2026-11-17"
+  },
+  {
+    "path": "contact.html",
+    "url": "https://sscakh.com/contact.html",
+    "language": "en",
+    "page": "contact",
+    "hash": "ae8fe50c6c04d926942d58b5ff29dac3cc338f3daf2f822e70c67140cb2b46f3",
+    "lastmod": "2026-11-17"
+  },
+  {
+    "path": "zh/contact.html",
+    "url": "https://sscakh.com/zh/contact.html",
+    "language": "zh-CN",
+    "page": "contact",
+    "hash": "4289ea50efa0a10661748445be531e4f5b2656a26244b1bd8c57e93cae138ca5",
+    "lastmod": "2026-11-17"
+  },
+  {
+    "path": "fr/contact.html",
+    "url": "https://sscakh.com/fr/contact.html",
+    "language": "fr",
+    "page": "contact",
+    "hash": "9f76ea0b3bb44174bb41587c7987b729a2458e1c6fb212bd7414eac3d0d61709",
+    "lastmod": "2026-11-17"
+  },
+  {
+    "path": "de/contact.html",
+    "url": "https://sscakh.com/de/contact.html",
+    "language": "de",
+    "page": "contact",
+    "hash": "33c9b466c5ba6d954de0207e2a77dc44de763e7eeb499b5e8330d614dd6fdab8",
+    "lastmod": "2026-11-17"
+  },
+  {
+    "path": "es/contact.html",
+    "url": "https://sscakh.com/es/contact.html",
+    "language": "es",
+    "page": "contact",
+    "hash": "cd43cc55cccbae34fc87e1bf86cd176d80ddf02077cd5790445358b6059b2bcb",
+    "lastmod": "2026-11-17"
+  },
+  {
+    "path": "it/contact.html",
+    "url": "https://sscakh.com/it/contact.html",
+    "language": "it",
+    "page": "contact",
+    "hash": "a2473e9e57c7dd807b6ac89596e2a66962f663075767ffc70d27294925cf7c99",
+    "lastmod": "2026-11-17"
+  },
+  {
+    "path": "pt/contact.html",
+    "url": "https://sscakh.com/pt/contact.html",
+    "language": "pt",
+    "page": "contact",
+    "hash": "bdc095c97cef0890bde320ef9640de616a6dbb1238c3d513f573f740cde58b3f",
+    "lastmod": "2026-11-17"
+  },
+  {
+    "path": "ja/contact.html",
+    "url": "https://sscakh.com/ja/contact.html",
+    "language": "ja",
+    "page": "contact",
+    "hash": "cc90c31555e4cd9c9c33f4dd28dbec11aebd7835620508da333565ee235a0012",
+    "lastmod": "2026-11-17"
+  },
+  {
+    "path": "ko/contact.html",
+    "url": "https://sscakh.com/ko/contact.html",
+    "language": "ko",
+    "page": "contact",
+    "hash": "527564da77b3240fbe5550b940e4b9c5973458b62b028ac634f5d9f4daea572c",
+    "lastmod": "2026-11-17"
+  },
+  {
+    "path": "ar/contact.html",
+    "url": "https://sscakh.com/ar/contact.html",
+    "language": "ar",
+    "page": "contact",
+    "hash": "308cfbf42a0ae58e00de57c54aa66cde1441bfb84894b3797ca13b6f40278c1e",
+    "lastmod": "2026-11-17"
+  },
+  {
+    "path": "news.html",
+    "url": "https://sscakh.com/news.html",
+    "language": "en",
+    "page": "news",
+    "hash": "5e8cd451374837372bb084412ab09f4caba8d7abaa6edaaca4e90f8a7e7d6cf3",
+    "lastmod": "2026-11-17"
+  },
+  {
+    "path": "zh/news.html",
+    "url": "https://sscakh.com/zh/news.html",
+    "language": "zh-CN",
+    "page": "news",
+    "hash": "567d50cb631105dc59b9f6ac503c7c50e31f8330b7de2889a92dccd44a177109",
+    "lastmod": "2026-11-17"
+  },
+  {
+    "path": "fr/news.html",
+    "url": "https://sscakh.com/fr/news.html",
+    "language": "fr",
+    "page": "news",
+    "hash": "b5f609ab9e4d046c7a13ab08d1546f7e9fa64c2830cd36a0f9983d1c494cef41",
+    "lastmod": "2026-11-17"
+  },
+  {
+    "path": "de/news.html",
+    "url": "https://sscakh.com/de/news.html",
+    "language": "de",
+    "page": "news",
+    "hash": "2ec2efdb936f5a9ba19e2974ab8475deae5959575a3978ec78f3abeffa373185",
+    "lastmod": "2026-11-17"
+  },
+  {
+    "path": "es/news.html",
+    "url": "https://sscakh.com/es/news.html",
+    "language": "es",
+    "page": "news",
+    "hash": "1c74e29d4e78615f3d5ad541d13471b911897b1a4cd9d745c5000f59a2b6d66c",
+    "lastmod": "2026-11-17"
+  },
+  {
+    "path": "it/news.html",
+    "url": "https://sscakh.com/it/news.html",
+    "language": "it",
+    "page": "news",
+    "hash": "161c618f40d61783dd44b60bb1c6cd02fbb3425e3b2b1f89396ec39e17f5c104",
+    "lastmod": "2026-11-17"
+  },
+  {
+    "path": "pt/news.html",
+    "url": "https://sscakh.com/pt/news.html",
+    "language": "pt",
+    "page": "news",
+    "hash": "2efdf736663ca94c568544af104938157b4b562088e8c37efe17cd2077091c9b",
+    "lastmod": "2026-11-17"
+  },
+  {
+    "path": "ja/news.html",
+    "url": "https://sscakh.com/ja/news.html",
+    "language": "ja",
+    "page": "news",
+    "hash": "2e53ea559881af922d5f4d95eb1b0258d5c8aceef451f73c7e7ce5beb44df6f9",
+    "lastmod": "2026-11-17"
+  },
+  {
+    "path": "ko/news.html",
+    "url": "https://sscakh.com/ko/news.html",
+    "language": "ko",
+    "page": "news",
+    "hash": "b73b78ea0f23cbf8623b89e8c9de91b7dd33cf8760d781696afbc8fb5b5050e3",
+    "lastmod": "2026-11-17"
+  },
+  {
+    "path": "ar/news.html",
+    "url": "https://sscakh.com/ar/news.html",
+    "language": "ar",
+    "page": "news",
+    "hash": "84da7d85fe487649713e3037e58a4b94057668bed5413de1e9444aa726958c2d",
+    "lastmod": "2026-11-17"
+  },
+  {
+    "path": "privacy.html",
+    "url": "https://sscakh.com/privacy.html",
+    "language": "en",
+    "page": "privacy",
+    "hash": "99feb1d72f5a0887bb6d20397209eaf43c83fcd6df602f21811394a1f1252b4f",
+    "lastmod": "2026-11-17"
+  },
+  {
+    "path": "zh/privacy.html",
+    "url": "https://sscakh.com/zh/privacy.html",
+    "language": "zh-CN",
+    "page": "privacy",
+    "hash": "d54ad05f1c9fe3a6ac772e268b8ec6d0027f3e80ae903710d79af4f00d8ea707",
+    "lastmod": "2026-11-17"
+  },
+  {
+    "path": "terms.html",
+    "url": "https://sscakh.com/terms.html",
+    "language": "en",
+    "page": "terms",
+    "hash": "764ecaf76368836e806c7b02579b2a0edd388591c529a25140ad643efc46820c",
+    "lastmod": "2026-11-17"
+  },
+  {
+    "path": "zh/terms.html",
+    "url": "https://sscakh.com/zh/terms.html",
+    "language": "zh-CN",
+    "page": "terms",
+    "hash": "8252d1415545b459d2594a890fdff6ff83500cf409d03557f4ae8a7a9b8dff47",
+    "lastmod": "2026-11-17"
+  },
+  {
+    "path": "cookies.html",
+    "url": "https://sscakh.com/cookies.html",
+    "language": "en",
+    "page": "cookies",
+    "hash": "db1c8aaaa18f13aa8c076913b25c2c2581380ce3fa396ae5702e136ac5b883c6",
+    "lastmod": "2026-11-17"
+  },
+  {
+    "path": "zh/cookies.html",
+    "url": "https://sscakh.com/zh/cookies.html",
+    "language": "zh-CN",
+    "page": "cookies",
+    "hash": "2fbafbc02395534a2b7550ea0cb0a7bade238a7f9610785ef1700d9e5ff57fa7",
+    "lastmod": "2026-11-17"
+  }
+]

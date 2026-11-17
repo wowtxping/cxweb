@@ -17,7 +17,7 @@ const siteTranslations={"Skip to content":{"en":"Skip to content","zh":"跳转�
   const lookup = new Map(Object.keys(siteTranslations).map(key => [key.toLowerCase(),key]));
   let current = 'en';
   const valid = value => allowed.has(value) ? value : 'en';
-  const stored = () => valid(window.SitePrivacy?.getLanguage() || 'en');
+  const stored = () => valid(document.documentElement.dataset.pageLanguage || window.SitePrivacy?.getLanguage() || 'en');
   function translate(source, code=current, chinese) {
     code = valid(code);
     if (code === 'en') return source;
@@ -107,6 +107,7 @@ const siteTranslations={"Skip to content":{"en":"Skip to content","zh":"跳转�
     panel.addEventListener('click',event=>{
       const option=event.target.closest('[data-language]');
       if (!option || !allowed.has(option.dataset.language)) return;
+      event.preventDefault();
       const selected=option.dataset.language;
       window.SitePrivacy?.setLanguage(selected);
       current=selected;
@@ -115,6 +116,7 @@ const siteTranslations={"Skip to content":{"en":"Skip to content","zh":"跳转�
       close(true);
     });
     panel.addEventListener('keydown',event=>{
+      if(event.key===' '&&event.target.matches('a[data-language]')){event.preventDefault();event.target.click();return;}
       if (!['ArrowDown','ArrowUp','Home','End'].includes(event.key)) return;
       event.preventDefault();
       const index=options.indexOf(document.activeElement);
@@ -128,14 +130,14 @@ const siteTranslations={"Skip to content":{"en":"Skip to content","zh":"跳转�
   }
   function bootstrap() {
     current=stored();
+    const rendered=document.documentElement.dataset.pageLanguage===current&&document.documentElement.lang===languages.find(item=>item.code===current).tag;
     document.documentElement.dataset.initialLanguage=current;
     document.documentElement.lang=languages.find(item=>item.code===current).tag;
     document.documentElement.dir=current==='ar'?'rtl':'ltr';
-    document.documentElement.setAttribute('data-language-pending','');
+    if(!rendered)document.documentElement.setAttribute('data-language-pending','');
     document.addEventListener('DOMContentLoaded',()=>{
-      if (!document.documentElement.hasAttribute('data-language-pending')) return;
-      apply(document,current);
-      initPicker(code=>apply(document,code));
+      if(document.documentElement.hasAttribute('data-language-pending'))apply(document,current);
+      initPicker(code=>{apply(document,code);window.SiteSEO?.apply(code);});
     },{once:true});
   }
   window.SiteI18n={languages,translate,apply,initPicker,bootstrap,valid};

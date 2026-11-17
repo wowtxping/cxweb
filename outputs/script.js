@@ -1,26 +1,26 @@
 /* Add supplied photographs here. Relative paths also work when index.html is opened directly. */
 const imageAssets = {
-  'factory-hero': 'assets/factory-hero-photo.webp',
-  'factory-detail': 'assets/showroom-photo.webp',
-  'home-knitting': 'assets/process-knitting-photo.webp',
-  'process-knitting': 'assets/process-knitting-20261002.webp',
-  'process-linking': 'assets/process-linking-20261002.webp',
-  'process-washing': 'assets/process-washing-20261002.webp',
-  'process-sewing': 'assets/process-sewing-20261002.webp',
-  'process-finishing': 'assets/process-finishing-20261002.webp',
-  'process-packing': 'assets/process-packing-20261002.webp',
-  'sample-women': 'assets/sample-women-collection-20261002.webp',
-  'sample-women-2': 'assets/sample-women-2-collection-20261002.webp',
-  'sample-women-3': 'assets/sample-women-3-collection-20261002.webp',
-  'sample-women-4': 'assets/sample-women-4-collection-20261002.webp',
-  'sample-men': 'assets/sample-men-collection-20261002.webp',
-  'sample-men-2': 'assets/sample-men-2-collection-20261002.webp',
-  'sample-men-3': 'assets/sample-men-3-collection-20261002.webp',
-  'sample-men-4': 'assets/sample-men-4-collection-20261002.webp',
-  'sample-kids': 'assets/sample-kids-collection-20261002.webp',
-  'sample-kids-2': 'assets/sample-kids-2-collection-20261002.webp',
-  'sample-accessories-2': 'assets/sample-accessories-2-collection-20261002.webp',
-  'sample-accessories': 'assets/sample-accessories-collection-20261002.webp'
+  'factory-hero': '/assets/factory-hero-photo.webp',
+  'factory-detail': '/assets/showroom-photo.webp',
+  'home-knitting': '/assets/process-knitting-photo.webp',
+  'process-knitting': '/assets/process-knitting-20261002.webp',
+  'process-linking': '/assets/process-linking-20261002.webp',
+  'process-washing': '/assets/process-washing-20261002.webp',
+  'process-sewing': '/assets/process-sewing-20261002.webp',
+  'process-finishing': '/assets/process-finishing-20261002.webp',
+  'process-packing': '/assets/process-packing-20261002.webp',
+  'sample-women': '/assets/sample-women-collection-20261002.webp',
+  'sample-women-2': '/assets/sample-women-2-collection-20261002.webp',
+  'sample-women-3': '/assets/sample-women-3-collection-20261002.webp',
+  'sample-women-4': '/assets/sample-women-4-collection-20261002.webp',
+  'sample-men': '/assets/sample-men-collection-20261002.webp',
+  'sample-men-2': '/assets/sample-men-2-collection-20261002.webp',
+  'sample-men-3': '/assets/sample-men-3-collection-20261002.webp',
+  'sample-men-4': '/assets/sample-men-4-collection-20261002.webp',
+  'sample-kids': '/assets/sample-kids-collection-20261002.webp',
+  'sample-kids-2': '/assets/sample-kids-2-collection-20261002.webp',
+  'sample-accessories-2': '/assets/sample-accessories-2-collection-20261002.webp',
+  'sample-accessories': '/assets/sample-accessories-collection-20261002.webp'
 };
 const processes = [
   ['knitting', '针织', 'Knitting', '从纱线到织片，让材质与针法相遇，构成服装的基础。', 'Yarn becomes knitted panels, bringing together material and stitch to form the foundation of a garment.'],
@@ -104,7 +104,7 @@ function renderImages() {
       img.width = 1920;
       img.height = 918;
       img.fetchPriority = 'high';
-      img.srcset = 'assets/factory-hero-photo-small.webp 960w, assets/factory-hero-photo.webp 1920w';
+      img.srcset = '/assets/factory-hero-photo-small.webp 960w, /assets/factory-hero-photo.webp 1920w';
       img.sizes = '(max-width: 620px) calc(100vw - 40px), (max-width: 900px) calc(100vw - 72px), 54vw';
     }
     let retried = false;
@@ -127,7 +127,10 @@ function renderCollection() {
   if (!grid) return;
   if (!grid.children.length) {
     grid.innerHTML = sampleRows.map((row,r) => `<section class="collection-row" aria-labelledby="collection-${row.id}"><div class="collection-row-heading"><h3 id="collection-${row.id}" data-zh="${row.zh}" data-en="${row.en}">${row.zh}</h3><span data-zh="0${r+1} / ${row.zh}" data-en="0${r+1} / ${row.en}">0${r+1} / ${row.en}</span></div><div class="sample-row-grid" tabindex="0" role="region" aria-labelledby="collection-${row.id}">${row.items.map((item,i) => `<article class="sample"><div class="image-slot sample-image" data-image="sample-${item[0]}"><span class="image-index">0${i+1} / ${item[2].toUpperCase()}</span><div class="placeholder-center"><span class="placeholder-symbol">＋</span><span data-zh="样衣图片预留" data-en="Sample image placeholder">样衣图片预留</span></div></div><div class="sample-info"><h4 data-zh="${item[1]}" data-en="${item[2]}">${item[1]}</h4><span>0${i+1}</span></div></article>`).join('')}</div><div class="swipe-hint"><span data-zh="左右滑动，浏览样衣" data-en="Swipe to explore samples">左右滑动，浏览样衣</span><span class="sample-position" aria-hidden="true">01 / 04</span></div></section>`).join('');
-    grid.querySelectorAll('.sample-row-grid').forEach(row => {
+  }
+  grid.querySelectorAll('.sample-row-grid').forEach(row => {
+      if(row.dataset.scrollReady)return;
+      row.dataset.scrollReady='true';
       let pending = false;
       row.addEventListener('scroll', () => {
         if (pending) return;
@@ -147,7 +150,6 @@ function renderCollection() {
         });
       }, {passive:true});
     });
-  }
 }
 
 function renderProcess(focus = false) {
@@ -175,6 +177,11 @@ document.getElementById('process-tabs')?.addEventListener('keydown', e => {
   renderProcess(true);
 });
 function applyLanguage() {
+  if (!window.SiteI18n) {
+    // Pre-rendered content is already readable in the URL's language.
+    document.documentElement.removeAttribute('data-language-pending');
+    return;
+  }
   renderCollection();
   if (window.SiteI18n) {
     SiteI18n.apply(document, language);
@@ -183,9 +190,15 @@ function applyLanguage() {
     document.documentElement.removeAttribute('data-language-pending');
   }
   renderProcess();
+  window.SiteSEO?.apply(language);
 }
 window.SiteI18n?.initPicker(code => {
   language = code;
   applyLanguage();
 });
 applyLanguage();
+window.addEventListener('popstate',()=>{
+  if(!window.SiteSEO)return;
+  language=SiteSEO.languageFromPath();
+  applyLanguage();
+});
