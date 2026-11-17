@@ -390,3 +390,18 @@ html[dir="rtl"] .cooperation-steps li{padding-left:0;padding-right:22px;border-l
 html[dir="rtl"] .cooperation-steps li:first-child{padding-right:0;border:0}
 @media(max-width:1000px){html[dir="rtl"] .cooperation-steps li:nth-child(odd){padding-right:0;border:0}}
 @media(max-width:620px){html[dir="rtl"] .cooperation-steps li,html[dir="rtl"] .cooperation-steps li:first-child,html[dir="rtl"] .cooperation-steps li:nth-child(odd){padding:0 55px 24px 0;border:0}html[dir="rtl"] .cooperation-steps li:before{left:auto;right:14px}html[dir="rtl"] .cooperation-step-visual .cooperation-number{left:auto;right:0}html[dir="rtl"] .cooperation-steps li:last-child{padding-bottom:0}}
+
+/* Local chat launcher: the third-party SDK is requested only on activation. */
+.support-chat{position:fixed;right:24px;bottom:max(24px,env(safe-area-inset-bottom));z-index:998}
+.support-chat[hidden],.support-chat-status[hidden],.support-chat-status a[hidden]{display:none}
+.support-chat-button{display:grid;place-items:center;width:58px;height:58px;padding:0;border:1px solid #bda087;border-radius:50%;background:#493126;color:#faf7f2;box-shadow:0 6px 22px #24150e24;transition:transform .25s,background .25s}
+.support-chat-button:hover{background:#694a36;transform:translateY(-2px)}
+.support-chat-button:disabled{cursor:progress}
+.support-chat-spinner{display:none;width:24px;height:24px;border:2px solid #faf7f260;border-top-color:#faf7f2;border-radius:50%;animation:chat-loading .9s linear infinite}
+.support-chat.is-loading .support-chat-icon{display:none}
+.support-chat.is-loading .support-chat-spinner{display:block}
+.support-chat-status{position:absolute;right:0;bottom:74px;width:280px;max-width:calc(100vw - 40px);padding:16px 18px;background:var(--paper);color:var(--ink);border:1px solid var(--line);border-radius:8px;box-shadow:0 8px 26px #24150e18;font-size:13px;line-height:1.7;text-align:start}
+.support-chat-status a{display:inline-block;margin-top:9px;text-decoration:underline;text-underline-offset:3px;direction:ltr;unicode-bidi:isolate}
+@keyframes chat-loading{to{transform:rotate(360deg)}}
+@media(max-width:620px){.support-chat{right:18px;bottom:max(18px,env(safe-area-inset-bottom))}.support-chat-button{width:54px;height:54px}}
+@media(prefers-reduced-motion:reduce){.support-chat-spinner{animation:none}.support-chat-button{transition:none}.support-chat-button:hover{transform:none}}
