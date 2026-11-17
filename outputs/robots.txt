@@ -1,3 +1,12 @@
 User-agent: *
 Allow: /
+
+# Allow discovery in ChatGPT Search; GPTBot training access is controlled separately.
+User-agent: OAI-SearchBot
+Allow: /
+
+# Bing powers Copilot search discovery.
+User-agent: Bingbot
+Allow: /
+
 Sitemap: https://sscakh.com/sitemap.xml
