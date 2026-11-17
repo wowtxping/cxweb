@@ -86,7 +86,7 @@ function renderImages() {
       'sample-accessories-2': ['黄色针织围巾', 'Yellow knitted scarf'],
     };
     const alt = (photoAlt[key] ? T(photoAlt[key][1], photoAlt[key][0]) : '')
-      || slot.querySelector('.placeholder-center')?.textContent.replace('＋','').trim() || '';
+      || T('Knitwear production image', '针织服装生产图片');
     if (existing && existing.getAttribute('src') === src) {
       existing.alt = alt;
       return;
@@ -126,7 +126,7 @@ function renderCollection() {
   const grid = document.getElementById('collection-grid');
   if (!grid) return;
   if (!grid.children.length) {
-    grid.innerHTML = sampleRows.map((row,r) => `<section class="collection-row" aria-labelledby="collection-${row.id}"><div class="collection-row-heading"><h3 id="collection-${row.id}" data-zh="${row.zh}" data-en="${row.en}">${row.zh}</h3><span data-zh="0${r+1} / ${row.zh}" data-en="0${r+1} / ${row.en}">0${r+1} / ${row.en}</span></div><div class="sample-row-grid" tabindex="0" role="region" aria-labelledby="collection-${row.id}">${row.items.map((item,i) => `<article class="sample"><div class="image-slot sample-image" data-image="sample-${item[0]}"><span class="image-index">0${i+1} / ${item[2].toUpperCase()}</span><div class="placeholder-center"><span class="placeholder-symbol">＋</span><span data-zh="样衣图片预留" data-en="Sample image placeholder">样衣图片预留</span></div></div><div class="sample-info"><h4 data-zh="${item[1]}" data-en="${item[2]}">${item[1]}</h4><span>0${i+1}</span></div></article>`).join('')}</div><div class="swipe-hint"><span data-zh="左右滑动，浏览样衣" data-en="Swipe to explore samples">左右滑动，浏览样衣</span><span class="sample-position" aria-hidden="true">01 / 04</span></div></section>`).join('');
+    grid.innerHTML = sampleRows.map((row,r) => `<section class="collection-row" aria-labelledby="collection-${row.id}"><div class="collection-row-heading"><h3 id="collection-${row.id}" data-zh="${row.zh}" data-en="${row.en}">${row.zh}</h3><span data-zh="0${r+1} / ${row.zh}" data-en="0${r+1} / ${row.en}">0${r+1} / ${row.en}</span></div><div class="sample-row-grid" tabindex="0" role="region" aria-labelledby="collection-${row.id}">${row.items.map((item,i) => `<article class="sample"><div class="image-slot sample-image" data-image="sample-${item[0]}"><span class="image-index">0${i+1} / ${item[2].toUpperCase()}</span></div><div class="sample-info"><h4 data-zh="${item[1]}" data-en="${item[2]}">${item[1]}</h4><span>0${i+1}</span></div></article>`).join('')}</div><div class="swipe-hint"><span data-zh="左右滑动，浏览样衣" data-en="Swipe to explore samples">左右滑动，浏览样衣</span><span class="sample-position" aria-hidden="true">01 / 04</span></div></section>`).join('');
   }
   grid.querySelectorAll('.sample-row-grid').forEach(row => {
       if(row.dataset.scrollReady)return;
@@ -161,7 +161,6 @@ function renderProcess(focus = false) {
   document.getElementById('process-title').textContent = T(p[2],p[1]);
   document.getElementById('process-english').textContent = T(p[2],p[1]).toUpperCase();
   document.getElementById('process-text').textContent = T(p[4],p[3]);
-  document.getElementById('process-placeholder').textContent = `${T(p[2],p[1])} · ${T('Image placeholder','图片预留')}`;
   document.getElementById('process-image-label').textContent = `0${selectedProcess+1} / ${T(p[2],p[1]).toUpperCase()}`;
   document.querySelector('.process-image').dataset.image = `process-${p[0]}`;
   document.querySelector('.process-count').textContent = `0${selectedProcess+1} — 06`;
