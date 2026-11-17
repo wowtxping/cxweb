@@ -405,3 +405,43 @@ html[dir="rtl"] .cooperation-steps li:first-child{padding-right:0;border:0}
 @keyframes chat-loading{to{transform:rotate(360deg)}}
 @media(max-width:620px){.support-chat{right:18px;bottom:max(18px,env(safe-area-inset-bottom))}.support-chat-button{width:54px;height:54px}}
 @media(prefers-reduced-motion:reduce){.support-chat-spinner{animation:none}.support-chat-button{transition:none}.support-chat-button:hover{transform:none}}
+
+/* Policies and privacy choices use the site's quiet, cashmere palette. */
+.footer-legal{display:flex;flex-wrap:wrap;gap:14px 26px;margin-top:26px;padding-top:18px;border-top:1px solid #bea38b24;font-size:12px;color:#cbb8a6}
+.footer-legal button{border:0;padding:0;background:none;font:inherit;color:inherit;text-decoration:underline;text-underline-offset:4px}
+.footer-legal a:hover,.footer-legal button:hover{color:#fff}
+.legal-intro{padding-bottom:40px}
+.legal-layout{display:grid;grid-template-columns:220px minmax(0,820px);gap:70px;padding-bottom:90px;align-items:start}
+.legal-nav{display:grid;gap:16px;padding:20px 0;border-top:1px solid var(--line);font-size:14px}
+.legal-nav a[aria-current]{color:var(--accent)}
+.legal-settings{border:0;border-bottom:1px solid var(--accent);background:none;padding:0 0 5px;text-align:start;width:fit-content;font:inherit;color:inherit}
+.legal-copy{min-width:0;font-size:15px;line-height:1.95;color:var(--muted)}
+.legal-copy section+section{border-top:1px solid var(--line);margin-top:28px;padding-top:26px}
+.legal-copy h2{font-size:26px;line-height:1.5;color:var(--ink);margin-bottom:12px;letter-spacing:0}
+.legal-copy a{text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+.legal-copy code{font-size:13px;overflow-wrap:anywhere;background:#eee4d7;padding:2px 5px;color:var(--ink)}
+.legal-language-note{padding:15px 18px;background:#f0e7db;margin-bottom:25px;font-size:13px}
+html[lang="en"] .legal-language-note,html[lang="zh-CN"] .legal-language-note{display:none}
+.privacy-banner{position:fixed;z-index:1100;bottom:18px;left:18px;right:18px;max-width:1100px;margin:auto;background:var(--paper);color:var(--ink);border:1px solid var(--line);box-shadow:0 8px 40px #24150e28;padding:22px 26px;display:flex;align-items:center;gap:28px;font-size:13px;line-height:1.65}
+.privacy-banner[hidden],.privacy-dialog [hidden]{display:none}
+.privacy-banner strong{font-weight:500;font-size:16px}
+.privacy-banner p{margin:5px 0 8px}
+.privacy-banner a,.privacy-policy-links a{text-decoration:underline;text-underline-offset:3px}
+.privacy-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.privacy-banner .privacy-actions{flex-shrink:0;max-width:420px;margin-top:0}
+.privacy-actions button,.privacy-close{border:1px solid #b9987b;background:var(--paper);color:var(--ink);padding:10px 16px;min-height:44px;font-size:13px;line-height:1.5}
+.privacy-actions button:hover,.privacy-close:hover{background:#eadfce}
+.privacy-dialog{position:fixed;inset:0;z-index:1200;margin:auto;width:min(620px,calc(100vw - 32px));max-height:calc(100dvh - 40px);overflow:auto;border:1px solid var(--line);background:var(--paper);color:var(--ink);padding:28px;font-size:14px;line-height:1.85;box-shadow:0 15px 60px #24150e33}
+.privacy-dialog::backdrop{background:#24150e70}
+.privacy-dialog h2{font-size:30px;line-height:1.4;margin:8px 0 18px}
+.privacy-close{display:block;margin-inline-start:auto;padding:5px 12px;min-height:36px;font-size:12px}
+.privacy-essential{font-size:13px;color:var(--muted);margin-bottom:18px}
+.privacy-option{display:flex;gap:14px;align-items:flex-start;padding:18px 0;border-top:1px solid var(--line);cursor:pointer}
+.privacy-option input{width:20px;height:20px;flex:0 0 20px;margin-top:5px;accent-color:var(--ink)}
+.privacy-option strong,.privacy-option span span{display:block}
+.privacy-option strong{font-weight:500;margin-bottom:5px}
+.privacy-option span span{font-size:13px;color:var(--muted)}
+.privacy-policy-links{font-size:12px;margin-top:18px}
+.privacy-email{display:inline-block;direction:ltr;unicode-bidi:isolate;text-decoration:underline;font-size:13px;margin-top:12px}
+@media(max-width:900px){.legal-layout{grid-template-columns:1fr;gap:26px;padding-bottom:60px}.legal-nav{display:flex;flex-wrap:wrap;gap:16px 24px}.privacy-banner{display:block}.privacy-banner .privacy-actions{max-width:none;margin-top:16px}}
+@media(max-width:620px){.footer-legal{gap:12px 20px}.privacy-banner{padding:18px;bottom:12px;left:12px;right:12px;font-size:12px}.privacy-actions button{padding:9px 12px;font-size:12px}.privacy-dialog{padding:20px}.legal-copy{font-size:14px}.legal-copy h2{font-size:23px}}

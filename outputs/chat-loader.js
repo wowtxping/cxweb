@@ -88,7 +88,7 @@
     else removeListener?.();
     openWhenReady();
   }
-  function loadChat() {
+  function startChat() {
     if (state === 'loading' || state === 'ready') return;
     state = 'loading';
     updateLabels();
@@ -117,6 +117,19 @@
       fail();
     };
     document.body.appendChild(sdkScript);
+  }
+
+  async function loadChat() {
+    if (state === 'consent' || state === 'loading' || state === 'ready') return;
+    // Loading by click is not consent: explain the provider before any SDK request.
+    if (!window.SitePrivacy) { state = 'error'; updateLabels(); return; }
+    state = 'consent';
+    try {
+      const allowed = await SitePrivacy.requestChatConsent();
+      state = 'idle';
+      if (allowed && SitePrivacy.allows('chat')) startChat();
+      else updateLabels();
+    } catch (_) { state = 'error'; updateLabels(); }
   }
 
   const languageObserver = new MutationObserver(updateLabels);
