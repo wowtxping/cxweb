@@ -84,7 +84,13 @@
     showDialog('chat');
     return new Promise(resolve=>{pendingChat=resolve;});
   }
-  function updateText(){document.querySelectorAll('[data-privacy-text]').forEach(element=>{element.textContent=text(Number(element.dataset.privacyText));});}
+  function updateText(){document.querySelectorAll('[data-privacy-text]').forEach(element=>{
+    const index=Number(element.dataset.privacyText);element.textContent=text(index);
+    if(element.tagName==='A'&&(index===10||index===12)){
+      const page=index===10?'privacy':'cookies',language=document.documentElement.lang.split('-')[0];
+      element.href=window.SiteSEO?SiteSEO.route(language,page):'/'+page+'.html';
+    }
+  });}
   function init(){
     if(!document.body||document.getElementById('privacy-banner'))return;
     banner=document.createElement('aside');banner.id='privacy-banner';banner.className='privacy-banner';banner.setAttribute('aria-labelledby','privacy-banner-title');banner.hidden=!!record;
