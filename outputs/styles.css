@@ -445,3 +445,11 @@ html[lang="en"] .legal-language-note,html[lang="zh-CN"] .legal-language-note{dis
 .privacy-email{display:inline-block;direction:ltr;unicode-bidi:isolate;text-decoration:underline;font-size:13px;margin-top:12px}
 @media(max-width:900px){.legal-layout{grid-template-columns:1fr;gap:26px;padding-bottom:60px}.legal-nav{display:flex;flex-wrap:wrap;gap:16px 24px}.privacy-banner{display:block}.privacy-banner .privacy-actions{max-width:none;margin-top:16px}}
 @media(max-width:620px){.footer-legal{gap:12px 20px}.privacy-banner{padding:18px;bottom:12px;left:12px;right:12px;font-size:12px}.privacy-actions button{padding:9px 12px;font-size:12px}.privacy-dialog{padding:20px}.legal-copy{font-size:14px}.legal-copy h2{font-size:23px}}
+
+.news-feature.news-feature-text {
+  grid-template-columns: minmax(0, 760px);
+  margin-bottom: clamp(36px, 6vw, 72px);
+}
+.news-feature-text .news-holiday-dates {
+  margin-bottom: 18px;
+}
